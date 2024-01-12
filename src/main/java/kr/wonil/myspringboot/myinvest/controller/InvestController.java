@@ -1,0 +1,114 @@
+package kr.wonil.myspringboot.myinvest.controller;
+
+import kr.wonil.test.myspringboot.myinvest.data.dto.*;
+import kr.wonil.test.myspringboot.myinvest.service.MyInvestService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@AllArgsConstructor
+@RequestMapping("/invest")
+public class InvestController {
+
+    private final MyInvestService myInvestService;
+
+
+    @GetMapping(value = "/total-base-point")
+    public ResponseEntity<List<BasePointDto>> getTotalBasePoint(){
+
+        List<BasePointDto> dtoList = myInvestService.getTotalBasePoint();
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+
+    }
+
+    @GetMapping(value = "/coin/my-coin-price-flow")
+    public ResponseEntity<List<MyCoinPriceFlowDto>> getMyCoinPriceFlow(){
+
+        List<MyCoinPriceFlowDto> dtoList = myInvestService.getMyCoinPriceFlow();
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+
+    }
+
+    @GetMapping("/my-monthly-invest-total")
+    public ResponseEntity<List<MyMonthlyInvestTotalDto>> getMyMonthlyInvestTotal(
+            @RequestParam String month) {
+
+        List<MyMonthlyInvestTotalDto> list = null;
+
+        if(month == null || month.length() < 6)
+            list =  myInvestService.getMyMonthlyInvestTotal();
+
+        else
+            list = myInvestService.getMyMonthlyInvestTotal(month);
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+    @GetMapping("/my-monthly-invest-amount")
+    public ResponseEntity<List<MyMonthlyInvestAmountViewDto>> getMyMonthlyInvestAmount(
+            @RequestParam String month) {
+
+        List<MyMonthlyInvestAmountViewDto> list = null;
+
+        if(month == null || month.length() < 6)
+            list =  myInvestService.getMyMonthlyInvestAmount();
+
+        else
+            list = myInvestService.getMyMonthlyInvestAmount(month);
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+    @GetMapping("/my-yearly-invest-amount")
+    public ResponseEntity<List<MyYearlyInvestAmountViewDto>> getMyYearlyInvestAmount(
+            @RequestParam String year) {
+
+        List<MyYearlyInvestAmountViewDto> list = null;
+
+        if(year == null || year.length() < 4)
+            list =  myInvestService.getMyYearlyInvestAmount();
+
+        else
+            list = myInvestService.getMyYearlyInvestAmount(year);
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+    @GetMapping("/fx-status")
+    public ResponseEntity<List<FxStatusDto>> getMyYearlyInvestAmount() {
+
+        List<FxStatusDto> list = myInvestService.getFxStatus();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+    @GetMapping("/yearly-snp-margin")
+    public ResponseEntity<List<YearlyMarginDto>> getSnpYearlyMargin() {
+
+        List<YearlyMarginDto> list = myInvestService.getSnpYearlyMargin();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+
+    @GetMapping("/my-invest-total-status")
+    public ResponseEntity<List<MyInvestTotalStatusDto>> getMyInvestTotalStatus() {
+
+        List<MyInvestTotalStatusDto> list = myInvestService.getMyInvestTotalStatus();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+}
