@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myinvest.data.dao;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.DividendRate;
+import kr.wonil.myspringboot.myinvest.data.entity.DividendRate;
 
 import java.util.List;
 

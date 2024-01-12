@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myinvest.data.dto;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyInvestTotalStatus;
-import kr.wonil.test.myspringboot.util.DateUtil;
-import kr.wonil.test.myspringboot.util.NumberUtil;
+import kr.wonil.myspringboot.myinvest.data.entity.MyInvestTotalStatus;
+import kr.wonil.myspringboot.util.DateUtil;
+import kr.wonil.myspringboot.util.NumberUtil;
 import lombok.Data;
 
 @Data

@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myexpense.repository;
 
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyTransactionView;
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransactionView;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

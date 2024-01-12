@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myinvest.repository;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyStockHistory;
+import kr.wonil.myspringboot.myinvest.data.entity.MyStockHistory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

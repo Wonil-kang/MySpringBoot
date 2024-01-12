@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myinvest.controller;
 
-import kr.wonil.test.myspringboot.myinvest.data.dto.*;
-import kr.wonil.test.myspringboot.myinvest.service.DividendService;
-import kr.wonil.test.myspringboot.myinvest.service.MyStockService;
+import kr.wonil.myspringboot.myinvest.data.dto.*;
+import kr.wonil.myspringboot.myinvest.service.DividendService;
+import kr.wonil.myspringboot.myinvest.service.MyStockService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

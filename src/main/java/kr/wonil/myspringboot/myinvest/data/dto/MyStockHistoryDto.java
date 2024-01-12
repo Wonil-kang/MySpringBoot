@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myinvest.data.dto;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyStockHistory;
+import kr.wonil.myspringboot.myinvest.data.entity.MyStockHistory;
 import lombok.Data;
 
 @Data

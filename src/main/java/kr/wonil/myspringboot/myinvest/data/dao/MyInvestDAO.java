@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myinvest.data.dao;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.*;
-import kr.wonil.test.myspringboot.myinvest.data.entity.FxStatus;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
+import kr.wonil.myspringboot.myinvest.data.entity.FxStatus;
 
 import java.util.List;
 

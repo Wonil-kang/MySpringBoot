@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myexpense.data.entity;
 
 import jakarta.persistence.*;
-import kr.wonil.test.myspringboot.myexpense.data.dto.MyTransactionDto;
-import kr.wonil.test.myspringboot.util.DateUtil;
+import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
+import kr.wonil.myspringboot.util.DateUtil;
 import lombok.Data;
 
 @Entity

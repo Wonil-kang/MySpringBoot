@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.yahoofinance.data.dao;
 
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.FinancialIndicator;
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.YahooDayInfoData;
+import kr.wonil.myspringboot.yahoofinance.data.entity.FinancialIndicator;
+import kr.wonil.myspringboot.yahoofinance.data.entity.YahooDayInfoData;
 
 import java.util.List;
 

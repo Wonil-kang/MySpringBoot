@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.sms.service;
 
-import kr.wonil.test.myspringboot.sms.data.dto.MySmsDto;
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.data.dto.MySmsDto;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
 
 import java.util.List;
 

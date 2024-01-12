@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
 //        return new Docket(DocumentationType.SWAGGER_2)
 //                .apiInfo(apiInfo())
 //                .select()
-//                .apis(RequestHandlerSelectors.basePackage("kr.wonil.test.myspringboot"))
+//                .apis(RequestHandlerSelectors.basePackage("kr.wonil.myspringboot"))
 //                .paths(PathSelectors.any())
 //                .build();
 //    }

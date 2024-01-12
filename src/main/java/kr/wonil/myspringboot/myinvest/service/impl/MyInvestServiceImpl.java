@@ -1,9 +1,9 @@
 package kr.wonil.myspringboot.myinvest.service.impl;
 
-import kr.wonil.test.myspringboot.myinvest.data.dao.MyInvestDAO;
-import kr.wonil.test.myspringboot.myinvest.data.dto.*;
-import kr.wonil.test.myspringboot.myinvest.data.entity.*;
-import kr.wonil.test.myspringboot.myinvest.service.MyInvestService;
+import kr.wonil.myspringboot.myinvest.data.dao.MyInvestDAO;
+import kr.wonil.myspringboot.myinvest.data.dto.*;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
+import kr.wonil.myspringboot.myinvest.service.MyInvestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

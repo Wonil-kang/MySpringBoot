@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myexpense.data.entity;
 
 import jakarta.persistence.*;
-import kr.wonil.test.myspringboot.myexpense.data.entity.pk.MyMonthlyExpenseByExpenseCodePK;
+import kr.wonil.myspringboot.myexpense.data.entity.pk.MyMonthlyExpenseByExpenseCodePK;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;

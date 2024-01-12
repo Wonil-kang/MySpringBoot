@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myexpense.data.dto;
 
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyMonthlyExpenseTotal;
-import kr.wonil.test.myspringboot.util.DateUtil;
+import kr.wonil.myspringboot.myexpense.data.entity.MyMonthlyExpenseTotal;
+import kr.wonil.myspringboot.util.DateUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

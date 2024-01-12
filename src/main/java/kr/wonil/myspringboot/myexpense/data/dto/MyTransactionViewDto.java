@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myexpense.data.dto;
 
 
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyTransactionView;
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransactionView;
 import lombok.Data;
 
 @Data

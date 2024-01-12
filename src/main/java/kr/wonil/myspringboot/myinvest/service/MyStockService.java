@@ -1,9 +1,9 @@
 package kr.wonil.myspringboot.myinvest.service;
 
-import kr.wonil.test.myspringboot.myinvest.data.dto.LastStockPriceDto;
-import kr.wonil.test.myspringboot.myinvest.data.dto.MyStockHistoryDto;
-import kr.wonil.test.myspringboot.myinvest.data.dto.MyStockPriceFlowDto;
-import kr.wonil.test.myspringboot.myinvest.data.dto.MyStockStatusDto;
+import kr.wonil.myspringboot.myinvest.data.dto.LastStockPriceDto;
+import kr.wonil.myspringboot.myinvest.data.dto.MyStockHistoryDto;
+import kr.wonil.myspringboot.myinvest.data.dto.MyStockPriceFlowDto;
+import kr.wonil.myspringboot.myinvest.data.dto.MyStockStatusDto;
 
 import java.util.List;
 

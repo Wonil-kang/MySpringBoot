@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.sms.data.dao.impl;
 
-import kr.wonil.test.myspringboot.sms.data.dao.MySmsDAO;
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
-import kr.wonil.test.myspringboot.sms.repository.MySmsRepository;
+import kr.wonil.myspringboot.sms.data.dao.MySmsDAO;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.repository.MySmsRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

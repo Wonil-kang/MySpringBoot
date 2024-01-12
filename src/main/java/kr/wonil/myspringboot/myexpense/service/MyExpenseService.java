@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myexpense.service;
 
 import jakarta.persistence.NoResultException;
-import kr.wonil.test.myspringboot.myexpense.data.dto.*;
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyTransaction;
+import kr.wonil.myspringboot.myexpense.data.dto.*;
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransaction;
 
 import java.util.ArrayList;
 import java.util.List;

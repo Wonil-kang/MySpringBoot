@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.yahoofinance.data.dto;
 
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.FinancialIndicator;
+import kr.wonil.myspringboot.yahoofinance.data.entity.FinancialIndicator;
 import lombok.Data;
 
 @Data

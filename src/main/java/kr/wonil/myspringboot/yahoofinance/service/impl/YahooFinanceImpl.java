@@ -1,11 +1,11 @@
 package kr.wonil.myspringboot.yahoofinance.service.impl;
 
-import kr.wonil.test.myspringboot.yahoofinance.data.dao.YahooFinanceDAO;
-import kr.wonil.test.myspringboot.yahoofinance.data.dto.FinancialIndicatorDto;
-import kr.wonil.test.myspringboot.yahoofinance.data.dto.YahooDayInfoDataDto;
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.FinancialIndicator;
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.YahooDayInfoData;
-import kr.wonil.test.myspringboot.yahoofinance.service.YahooFinanceService;
+import kr.wonil.myspringboot.yahoofinance.data.dao.YahooFinanceDAO;
+import kr.wonil.myspringboot.yahoofinance.data.dto.FinancialIndicatorDto;
+import kr.wonil.myspringboot.yahoofinance.data.dto.YahooDayInfoDataDto;
+import kr.wonil.myspringboot.yahoofinance.data.entity.FinancialIndicator;
+import kr.wonil.myspringboot.yahoofinance.data.entity.YahooDayInfoData;
+import kr.wonil.myspringboot.yahoofinance.service.YahooFinanceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

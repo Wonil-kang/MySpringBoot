@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.sms.data.dao;
 
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
 
 import java.util.List;
 

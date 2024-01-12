@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.yahoofinance.repository;
 
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.FinancialIndicator;
+import kr.wonil.myspringboot.yahoofinance.data.entity.FinancialIndicator;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

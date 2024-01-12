@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myinvest.data.entity;
 
 import jakarta.persistence.*;
-import kr.wonil.test.myspringboot.myinvest.data.entity.pk.YearlyMarginPK;
+import kr.wonil.myspringboot.myinvest.data.entity.pk.YearlyMarginPK;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;

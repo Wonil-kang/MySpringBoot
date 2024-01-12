@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.sms.repository;
 
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myexpense.data.dao.impl;
 
-import kr.wonil.test.myspringboot.myexpense.data.dao.MyExpenseDAO;
-import kr.wonil.test.myspringboot.myexpense.data.entity.*;
-import kr.wonil.test.myspringboot.myexpense.repository.*;
+import kr.wonil.myspringboot.myexpense.data.dao.MyExpenseDAO;
+import kr.wonil.myspringboot.myexpense.data.entity.*;
+import kr.wonil.myspringboot.myexpense.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

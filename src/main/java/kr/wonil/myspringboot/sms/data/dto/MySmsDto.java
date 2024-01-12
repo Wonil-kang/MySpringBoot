@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.sms.data.dto;
 
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

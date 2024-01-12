@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.myinvest.data.dto;
 
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.DividendRate;
+import kr.wonil.myspringboot.myinvest.data.entity.DividendRate;
 import lombok.Data;
 
 @Data

@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.myinvest.data.dao.impl;
 
-import kr.wonil.test.myspringboot.myinvest.data.dao.MyInvestDAO;
-import kr.wonil.test.myspringboot.myinvest.data.entity.*;
-import kr.wonil.test.myspringboot.myinvest.repository.*;
+import kr.wonil.myspringboot.myinvest.data.dao.MyInvestDAO;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
+import kr.wonil.myspringboot.myinvest.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

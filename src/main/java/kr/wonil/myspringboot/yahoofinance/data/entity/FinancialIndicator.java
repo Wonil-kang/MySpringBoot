@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.yahoofinance.data.entity;
 
 import jakarta.persistence.*;
-import kr.wonil.test.myspringboot.yahoofinance.data.entity.pk.FinancialIndicatorPK;
+import kr.wonil.myspringboot.yahoofinance.data.entity.pk.FinancialIndicatorPK;
 import lombok.Data;
 
 @Entity

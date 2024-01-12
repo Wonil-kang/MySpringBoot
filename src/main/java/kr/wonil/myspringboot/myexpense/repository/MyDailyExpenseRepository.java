@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myexpense.repository;
 
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyDailyExpense;
+import kr.wonil.myspringboot.myexpense.data.entity.MyDailyExpense;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

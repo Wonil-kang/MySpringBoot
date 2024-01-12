@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myexpense.data.dto;
 
-import kr.wonil.test.myspringboot.myexpense.data.entity.MyMonthlyTotalByTransactionInfo;
+import kr.wonil.myspringboot.myexpense.data.entity.MyMonthlyTotalByTransactionInfo;
 import lombok.Data;
 
 @Data

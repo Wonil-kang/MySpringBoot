@@ -1,6 +1,6 @@
 package kr.wonil.myspringboot.myinvest.data.dao;
 
-import kr.wonil.test.myspringboot.myinvest.data.entity.*;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
 
 import java.util.List;
 

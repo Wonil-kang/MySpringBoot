@@ -1,9 +1,9 @@
 package kr.wonil.myspringboot.myinvest.service.impl;
 
-import kr.wonil.test.myspringboot.myinvest.data.dao.DividendDAO;
-import kr.wonil.test.myspringboot.myinvest.data.dto.DividendRateDto;
-import kr.wonil.test.myspringboot.myinvest.data.entity.DividendRate;
-import kr.wonil.test.myspringboot.myinvest.service.DividendService;
+import kr.wonil.myspringboot.myinvest.data.dao.DividendDAO;
+import kr.wonil.myspringboot.myinvest.data.dto.DividendRateDto;
+import kr.wonil.myspringboot.myinvest.data.entity.DividendRate;
+import kr.wonil.myspringboot.myinvest.service.DividendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

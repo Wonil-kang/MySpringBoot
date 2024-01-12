@@ -1,10 +1,10 @@
 package kr.wonil.myspringboot.sms.service.impl;
 
-import kr.wonil.test.myspringboot.sms.data.dao.MySmsDAO;
-import kr.wonil.test.myspringboot.sms.data.dto.MySmsDto;
-import kr.wonil.test.myspringboot.sms.data.entity.MySms;
-import kr.wonil.test.myspringboot.sms.service.MySmsService;
-import kr.wonil.test.myspringboot.util.DateUtil;
+import kr.wonil.myspringboot.sms.data.dao.MySmsDAO;
+import kr.wonil.myspringboot.sms.data.dto.MySmsDto;
+import kr.wonil.myspringboot.sms.data.entity.MySms;
+import kr.wonil.myspringboot.sms.service.MySmsService;
+import kr.wonil.myspringboot.util.DateUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

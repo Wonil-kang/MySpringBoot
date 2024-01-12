@@ -1,7 +1,7 @@
 package kr.wonil.myspringboot.sms.controller;
 
-import kr.wonil.test.myspringboot.sms.data.dto.MySmsDto;
-import kr.wonil.test.myspringboot.sms.service.MySmsService;
+import kr.wonil.myspringboot.sms.data.dto.MySmsDto;
+import kr.wonil.myspringboot.sms.service.MySmsService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,8 @@
 package kr.wonil.myspringboot.yahoofinance.controller;
 
-import kr.wonil.test.myspringboot.yahoofinance.data.dto.FinancialIndicatorDto;
-import kr.wonil.test.myspringboot.yahoofinance.data.dto.YahooDayInfoDataDto;
-import kr.wonil.test.myspringboot.yahoofinance.service.YahooFinanceService;
+import kr.wonil.myspringboot.yahoofinance.data.dto.FinancialIndicatorDto;
+import kr.wonil.myspringboot.yahoofinance.data.dto.YahooDayInfoDataDto;
+import kr.wonil.myspringboot.yahoofinance.service.YahooFinanceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

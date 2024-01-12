@@ -1,14 +1,14 @@
 package kr.wonil.myspringboot.myinvest.data.dao.impl;
 
-import kr.wonil.test.myspringboot.myinvest.data.dao.MyStockDAO;
-import kr.wonil.test.myspringboot.myinvest.data.entity.LastStockPrice;
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyStockHistory;
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyStockPriceFlow;
-import kr.wonil.test.myspringboot.myinvest.data.entity.MyStockStatus;
-import kr.wonil.test.myspringboot.myinvest.repository.LastStockPriceRepository;
-import kr.wonil.test.myspringboot.myinvest.repository.MyStockHistoryRepository;
-import kr.wonil.test.myspringboot.myinvest.repository.MyStockPriceFlowRepository;
-import kr.wonil.test.myspringboot.myinvest.repository.MyStockStatusRepository;
+import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
+import kr.wonil.myspringboot.myinvest.data.entity.LastStockPrice;
+import kr.wonil.myspringboot.myinvest.data.entity.MyStockHistory;
+import kr.wonil.myspringboot.myinvest.data.entity.MyStockPriceFlow;
+import kr.wonil.myspringboot.myinvest.data.entity.MyStockStatus;
+import kr.wonil.myspringboot.myinvest.repository.LastStockPriceRepository;
+import kr.wonil.myspringboot.myinvest.repository.MyStockHistoryRepository;
+import kr.wonil.myspringboot.myinvest.repository.MyStockPriceFlowRepository;
+import kr.wonil.myspringboot.myinvest.repository.MyStockStatusRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
