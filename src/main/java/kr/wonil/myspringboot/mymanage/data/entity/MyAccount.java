@@ -12,6 +12,7 @@ public class MyAccount {
 
     @Id
     @Column(name = "ACCOUNT_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int accountId;
     @Column(name = "ACCOUNT_INFO")
     String accountInfo;
