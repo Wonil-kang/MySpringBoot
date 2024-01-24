@@ -1,6 +1,6 @@
-package kr.wonil.myspringboot.mymanage.data.dao;
+package kr.wonil.myspringboot.mymanage.mymanage.data.dao;
 
-import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.test.myspringboot.mymanage.data.entity.MyAccount;
 
 import java.util.List;
 

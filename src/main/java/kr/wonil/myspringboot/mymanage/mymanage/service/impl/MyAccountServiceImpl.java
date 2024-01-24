@@ -1,9 +1,9 @@
-package kr.wonil.myspringboot.mymanage.service.impl;
+package kr.wonil.myspringboot.mymanage.mymanage.service.impl;
 
-import kr.wonil.myspringboot.mymanage.data.dao.MyAccountDAO;
-import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
-import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
-import kr.wonil.myspringboot.mymanage.service.MyAccountService;
+import kr.wonil.test.myspringboot.mymanage.data.dao.MyAccountDAO;
+import kr.wonil.test.myspringboot.mymanage.data.dto.MyAccountDto;
+import kr.wonil.test.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.test.myspringboot.mymanage.service.MyAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +41,6 @@ public class MyAccountServiceImpl implements MyAccountService {
 
         return new MyAccountDto(myAccountDAO.selectMyAccountById(accountId));
     }
-
 
     @Override
     public MyAccount saveMyAccount(MyAccountDto[] myDtoArr) {

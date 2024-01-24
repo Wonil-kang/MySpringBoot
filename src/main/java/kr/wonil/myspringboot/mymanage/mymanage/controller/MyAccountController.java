@@ -1,7 +1,7 @@
-package kr.wonil.myspringboot.mymanage.controller;
+package kr.wonil.myspringboot.mymanage.mymanage.controller;
 
-import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
-import kr.wonil.myspringboot.mymanage.service.MyAccountService;
+import kr.wonil.test.myspringboot.mymanage.data.dto.MyAccountDto;
+import kr.wonil.test.myspringboot.mymanage.service.MyAccountService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

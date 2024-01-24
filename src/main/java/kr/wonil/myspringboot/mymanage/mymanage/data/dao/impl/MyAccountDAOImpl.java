@@ -1,8 +1,8 @@
-package kr.wonil.myspringboot.mymanage.data.dao.impl;
+package kr.wonil.myspringboot.mymanage.mymanage.data.dao.impl;
 
-import kr.wonil.myspringboot.mymanage.data.dao.MyAccountDAO;
-import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
-import kr.wonil.myspringboot.mymanage.repository.MyAccountRepository;
+import kr.wonil.test.myspringboot.mymanage.data.dao.MyAccountDAO;
+import kr.wonil.test.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.test.myspringboot.mymanage.repository.MyAccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

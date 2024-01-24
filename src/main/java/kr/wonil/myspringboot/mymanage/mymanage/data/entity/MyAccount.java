@@ -1,7 +1,10 @@
-package kr.wonil.myspringboot.mymanage.data.entity;
+package kr.wonil.myspringboot.mymanage.mymanage.data.entity;
 
-import jakarta.persistence.*;
-import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import kr.wonil.test.myspringboot.mymanage.data.dto.MyAccountDto;
 import lombok.Data;
 
 

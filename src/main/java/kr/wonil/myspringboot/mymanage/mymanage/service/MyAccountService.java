@@ -1,7 +1,7 @@
-package kr.wonil.myspringboot.mymanage.service;
+package kr.wonil.myspringboot.mymanage.mymanage.service;
 
-import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
-import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.test.myspringboot.mymanage.data.dto.MyAccountDto;
+import kr.wonil.test.myspringboot.mymanage.data.entity.MyAccount;
 
 import java.util.List;
 

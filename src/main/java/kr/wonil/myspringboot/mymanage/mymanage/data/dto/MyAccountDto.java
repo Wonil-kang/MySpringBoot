@@ -1,6 +1,6 @@
-package kr.wonil.myspringboot.mymanage.data.dto;
+package kr.wonil.myspringboot.mymanage.mymanage.data.dto;
 
-import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.test.myspringboot.mymanage.data.entity.MyAccount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
