@@ -51,8 +51,12 @@ public class MyAccountServiceImpl implements MyAccountService {
             MyAccountDto dto = myDtoArr[i];
 
             MyAccount entity = new MyAccount(dto);
-            MyAccount result = myAccountDAO.insertMyAccount(entity);
+            MyAccount result = null;
 
+            if(entity.getAccountId() > 0)
+                result = myAccountDAO.updateMyAccount(entity);
+            else
+                result = myAccountDAO.insertMyAccount(entity);
         }
         return null;
 
