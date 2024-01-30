@@ -1,6 +1,7 @@
 package kr.wonil.myspringboot.mymanage.controller;
 
 import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
+import kr.wonil.myspringboot.mymanage.data.dto.MyAccountSampleDto;
 import kr.wonil.myspringboot.mymanage.service.MyAccountService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -28,6 +29,15 @@ public class MyAccountController {
 
     }
 
+    @GetMapping(value = "/my-account/sample")
+    public ResponseEntity<List<MyAccountSampleDto>> getMyAccountSample(){
+
+        List<MyAccountSampleDto> dtoList = myAccountService.getMyAccountSample();
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+
+    }
+
+
     @GetMapping(value = "/my-account/id")
     public ResponseEntity<MyAccountDto> getMyAccountById(@RequestParam int accountId){
 
@@ -40,6 +50,15 @@ public class MyAccountController {
 
         LOGGER.info("uploadMyAccount is called(" + dtoArr.length + ")");
         myAccountService.saveMyAccount(dtoArr);
+
+        return "";
+    }
+
+    @PostMapping(value = "/delete-my-account" )
+    public String deleteMyAccount(@RequestBody MyAccountDto[] dtoArr){
+
+        LOGGER.info("deleteMyAccount is called(" + dtoArr.length + ")");
+        myAccountService.deleteMyAccount(dtoArr);
 
         return "";
     }

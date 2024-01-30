@@ -2,7 +2,9 @@ package kr.wonil.myspringboot.mymanage.data.dao.impl;
 
 import kr.wonil.myspringboot.mymanage.data.dao.MyAccountDAO;
 import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
+import kr.wonil.myspringboot.mymanage.data.entity.MyAccountSample;
 import kr.wonil.myspringboot.mymanage.repository.MyAccountRepository;
+import kr.wonil.myspringboot.mymanage.repository.MyAccountSampleRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,12 +18,21 @@ import java.util.Optional;
 public class MyAccountDAOImpl implements MyAccountDAO {
 
     private final MyAccountRepository myAccountRepository;
+    private final MyAccountSampleRepository myAccountSampleRepository;
     private Logger LOGGER = LoggerFactory.getLogger(MyAccountDAOImpl.class);
 
     @Override
     public List<MyAccount> selectMyAccount() {
 
         List<MyAccount> list = myAccountRepository.findAll();
+
+        return list;
+    }
+
+    @Override
+    public List<MyAccountSample> selectMyAccountSample() {
+
+        List<MyAccountSample> list = myAccountSampleRepository.findAll();
 
         return list;
     }
@@ -74,5 +85,21 @@ public class MyAccountDAOImpl implements MyAccountDAO {
         }
 
         return result;
+    }
+
+
+    @Override
+    public void deleteMyAccount(MyAccount myAccount) {
+
+
+        try {
+            myAccountRepository.delete(myAccount);
+
+        }catch(Exception e){
+
+            LOGGER.error(e.toString());
+            e.printStackTrace();
+        }
+
     }
 }
