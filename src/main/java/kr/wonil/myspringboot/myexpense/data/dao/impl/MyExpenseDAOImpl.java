@@ -1,6 +1,7 @@
 package kr.wonil.myspringboot.myexpense.data.dao.impl;
 
 import kr.wonil.myspringboot.myexpense.data.dao.MyExpenseDAO;
+import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
 import kr.wonil.myspringboot.myexpense.data.entity.*;
 import kr.wonil.myspringboot.myexpense.repository.*;
 import lombok.RequiredArgsConstructor;
@@ -237,6 +238,26 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
         try {
 
             result = myTransactionRepository.save(myTransaction);
+
+        }catch(Exception e){
+
+            LOGGER.error(e.toString());
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    @Override
+    public MyTransaction updateMyTransaction(MyTransactionDto myTransactionDto) {
+
+        MyTransaction result = null;
+        MyTransaction entity = selectMyTransactionsById(myTransactionDto.getTransactionId());
+        entity.setMyTransactionForUpdate(myTransactionDto);
+
+        try {
+
+            result = myTransactionRepository.save(entity);
 
         }catch(Exception e){
 

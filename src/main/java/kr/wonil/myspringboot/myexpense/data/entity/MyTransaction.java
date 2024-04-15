@@ -81,4 +81,27 @@ public class MyTransaction {
     public MyTransaction() {
 
     }
+
+    public void setMyTransactionForUpdate(MyTransactionDto dto) {
+
+        transactionId = dto.getTransactionId();
+        smsBody = dto.getSmsBody();
+        smsId = dto.getSmsId();
+        cardName = dto.getCardName();
+        ownerName = dto.getOwnerName();
+        transactionType = dto.getTransactionType();
+        transactionAmount = dto.getTransactionAmount();
+        installmentPlan = dto.getInstallmentPlan();
+        dateTime = dto.getDateTime();
+        currency = dto.getCurrency();
+        transactionInfo = dto.getTransactionInfo();
+        canceledTransactionId = dto.getCanceledTransactionId();
+        memo = dto.getMemo();
+        accumulatedExpense = dto.getAccumulatedExpense();
+        useFlag = dto.getUseFlag();
+        expenseCode = dto.getExpenseCode();
+
+        regrId = "SYS";
+        mdtt = DateUtil.getCurrentKoreanDateTimeSecond();
+    }
 }

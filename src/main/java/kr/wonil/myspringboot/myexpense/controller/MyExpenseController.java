@@ -305,4 +305,13 @@ public class MyExpenseController {
         return "";
 
     }
+
+    @PostMapping(value = "/update-my-transaction" )
+    public String updateMyNewTransaction(@RequestBody MyTransactionDto[] dtoArr){
+
+        LOGGER.info("updateMyTransaction is called(" + dtoArr.length + ")");
+        myExpenseService.updateMyTransaction(dtoArr);
+
+        return "";
+    }
 }

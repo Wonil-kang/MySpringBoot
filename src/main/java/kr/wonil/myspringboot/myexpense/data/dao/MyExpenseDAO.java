@@ -1,5 +1,6 @@
 package kr.wonil.myspringboot.myexpense.data.dao;
 
+import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
 import kr.wonil.myspringboot.myexpense.data.entity.*;
 
 import java.util.List;
@@ -49,6 +50,8 @@ public interface MyExpenseDAO {
     public List<MyDailyExpense> selectMyDailyExpense(int limit);
 
     public MyTransaction insertMyTransaction(MyTransaction myTransaction);
+
+    public MyTransaction updateMyTransaction(MyTransactionDto myTransactionDto);
 
     public List<MyMonthlyExpenseByExpenseCode> selectMyMonthlyExpenseByExpenseCode();
 

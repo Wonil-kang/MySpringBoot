@@ -566,4 +566,18 @@ public class MyExpenseServiceImpl implements MyExpenseService {
 
     }
 
+    public MyTransaction updateMyTransaction(MyTransactionDto[] dtoArr) {
+
+        for(int i=0; i< dtoArr.length; i++) {
+
+            MyTransactionDto dto = dtoArr[i];
+
+            MyTransaction result = myExpenseDAO.updateMyTransaction(dto);
+
+        }
+
+        return null;
+
+    }
+
 }

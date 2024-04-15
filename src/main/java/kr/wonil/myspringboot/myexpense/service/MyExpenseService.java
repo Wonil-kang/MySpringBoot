@@ -56,4 +56,6 @@ public interface MyExpenseService {
 
     public MyTransaction saveMyTransaction(MyTransactionDto[] dtoArr);
 
+    public MyTransaction updateMyTransaction(MyTransactionDto[] dtoArr);
+
 }
