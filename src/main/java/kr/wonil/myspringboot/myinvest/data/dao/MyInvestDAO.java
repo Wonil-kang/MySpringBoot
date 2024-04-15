@@ -27,6 +27,8 @@ public interface MyInvestDAO {
     public List<MyYearlyInvestAmountView> selectMyYearlyInvestAmount();
     public List<FxStatus> selectFxStatus();
 
+    List<TotalFinanceStatus> selectTotalFinanceStatuses();
+
     public List<YearlyMargin> selectSnpYearlyMargin();
 
 

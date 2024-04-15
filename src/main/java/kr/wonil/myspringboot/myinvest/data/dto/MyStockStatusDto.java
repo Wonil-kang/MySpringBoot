@@ -8,6 +8,7 @@ public class MyStockStatusDto {
 
     private String stockNumber;
     private String stockName;
+    private String stockPrice;
     private String stockPriceDate;
     private String percentile;
     private String priceDifference;
@@ -24,6 +25,7 @@ public class MyStockStatusDto {
 
         stockNumber = myStockStatus.getStockNumber();
         stockName = myStockStatus.getStockName();
+        stockPrice = myStockStatus.getStockPrice();
         stockPriceDate = myStockStatus.getStockPriceDate();
         percentile = myStockStatus.getPercentile();
         priceDifference = myStockStatus.getPriceDifference();

@@ -21,6 +21,7 @@ public class MyInvestDaoImpl implements MyInvestDAO {
 
     private final MyYearlyInvestAmountRepository myYearlyInvestAmountRepository;
     private final FxStatusRepository fxStatusRepository;
+    private final TotalFinanceStatusRepository totalFinanceStatusRepository;
     private final MyInvestTotalStatusRepository myInvestTotalStatusRepository;
     private final YearlyMarginRepository yearlyMarginRepository;
 
@@ -69,6 +70,12 @@ public class MyInvestDaoImpl implements MyInvestDAO {
     @Override
     public List<FxStatus> selectFxStatus() {
         List<FxStatus> list = fxStatusRepository.findAll();
+        return list;
+    }
+
+    @Override
+    public List<TotalFinanceStatus> selectTotalFinanceStatuses() {
+        List<TotalFinanceStatus> list = totalFinanceStatusRepository.findAll();
         return list;
     }
 

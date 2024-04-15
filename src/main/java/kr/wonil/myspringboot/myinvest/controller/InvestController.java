@@ -93,6 +93,17 @@ public class InvestController {
 
     }
 
+
+    @GetMapping("/total-finance-status")
+    public ResponseEntity<List<TotalFinanceStatusDto>> getTotalFinanceStatus() {
+
+        List<TotalFinanceStatusDto> list = myInvestService.getTotalFinanceStatus();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+
     @GetMapping("/yearly-snp-margin")
     public ResponseEntity<List<YearlyMarginDto>> getSnpYearlyMargin() {
 

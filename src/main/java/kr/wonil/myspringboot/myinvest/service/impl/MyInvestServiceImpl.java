@@ -163,6 +163,21 @@ public class MyInvestServiceImpl implements MyInvestService {
     }
 
     @Override
+    public List<TotalFinanceStatusDto> getTotalFinanceStatus() {
+        List<TotalFinanceStatus> entityList = myInvestDAO.selectTotalFinanceStatuses();
+        List<TotalFinanceStatusDto> dtoList = new ArrayList<>();
+        TotalFinanceStatusDto dto = null;
+
+        for(TotalFinanceStatus entity : entityList){
+
+            dto = new TotalFinanceStatusDto(entity);
+            dtoList.add(dto);
+
+        }
+        return dtoList;
+    }
+
+    @Override
     public List<YearlyMarginDto> getSnpYearlyMargin() {
         List<YearlyMargin> entityList = myInvestDAO.selectSnpYearlyMargin();
         List<YearlyMarginDto> dtoList = new ArrayList<>();

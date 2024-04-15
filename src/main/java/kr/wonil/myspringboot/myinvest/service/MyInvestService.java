@@ -23,6 +23,8 @@ public interface MyInvestService {
     List<MyYearlyInvestAmountViewDto> getMyYearlyInvestAmount(String year);
     List<FxStatusDto> getFxStatus();
 
+    List<TotalFinanceStatusDto> getTotalFinanceStatus();
+
     List<YearlyMarginDto> getSnpYearlyMargin();
 
 }
