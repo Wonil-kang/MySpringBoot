@@ -27,4 +27,6 @@ public interface MyInvestService {
 
     List<YearlyMarginDto> getSnpYearlyMargin();
 
+    List<SnPYoYDto> getSnpYoY();
+
 }

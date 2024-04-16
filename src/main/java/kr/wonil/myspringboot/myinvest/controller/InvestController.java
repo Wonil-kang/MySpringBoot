@@ -113,6 +113,15 @@ public class InvestController {
 
     }
 
+    @GetMapping("/snp-yoy")
+    public ResponseEntity<List<SnPYoYDto>> getSnpYoY() {
+
+        List<SnPYoYDto> list = myInvestService.getSnpYoY();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
 
     @GetMapping("/my-invest-total-status")
     public ResponseEntity<List<MyInvestTotalStatusDto>> getMyInvestTotalStatus() {

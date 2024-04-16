@@ -31,5 +31,7 @@ public interface MyInvestDAO {
 
     public List<YearlyMargin> selectSnpYearlyMargin();
 
+    public List<SnPYoY> selectSnpYoY();
+
 
 }

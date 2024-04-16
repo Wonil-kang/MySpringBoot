@@ -192,6 +192,22 @@ public class MyInvestServiceImpl implements MyInvestService {
         return dtoList;
     }
 
+
+    @Override
+    public List<SnPYoYDto> getSnpYoY() {
+        List<SnPYoY> entityList = myInvestDAO.selectSnpYoY();
+        List<SnPYoYDto> dtoList = new ArrayList<>();
+        SnPYoYDto dto = null;
+
+        for(SnPYoY entity : entityList){
+
+            dto = new SnPYoYDto(entity);
+            dtoList.add(dto);
+
+        }
+        return dtoList;
+    }
+
     @Override
     public List<MyInvestTotalStatusDto> getMyInvestTotalStatus() {
         List<MyInvestTotalStatus> entityList = myInvestDAO.selectMyInvestTotalStatus();
