@@ -1,9 +1,8 @@
 package kr.wonil.myspringboot.myinvest.data.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import kr.wonil.myspringboot.myinvest.data.entity.pk.SnPYoYPK;
+import kr.wonil.myspringboot.myinvest.data.entity.pk.YearlyMarginPK;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
@@ -12,6 +11,7 @@ import org.hibernate.annotations.Subselect;
 @Immutable
 @Table(name = "snp_yoy_view")
 @Data
+@IdClass(SnPYoYPK.class)
 @Subselect("select * from snp_yoy_view")
 public class SnPYoY {
 
@@ -21,6 +21,7 @@ public class SnPYoY {
     @Id
     @Column(name = "ticker")
     private String ticker;
+    @Id
     @Column(name = "last_date")
     private String lastDate;
     @Column(name = "last_close")

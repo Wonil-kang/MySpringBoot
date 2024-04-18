@@ -3,8 +3,10 @@ package kr.wonil.myspringboot.mymanage.service.impl;
 import kr.wonil.myspringboot.mymanage.data.dao.MyAccountDAO;
 import kr.wonil.myspringboot.mymanage.data.dto.MyAccountDto;
 import kr.wonil.myspringboot.mymanage.data.dto.MyAccountSampleDto;
+import kr.wonil.myspringboot.mymanage.data.dto.MyMemoDto;
 import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
 import kr.wonil.myspringboot.mymanage.data.entity.MyAccountSample;
+import kr.wonil.myspringboot.mymanage.data.entity.MyMemo;
 import kr.wonil.myspringboot.mymanage.service.MyAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -95,4 +97,6 @@ public class MyAccountServiceImpl implements MyAccountService {
         return null;
 
     }
+
+
 }

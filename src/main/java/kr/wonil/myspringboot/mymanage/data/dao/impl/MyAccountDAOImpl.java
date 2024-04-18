@@ -3,8 +3,10 @@ package kr.wonil.myspringboot.mymanage.data.dao.impl;
 import kr.wonil.myspringboot.mymanage.data.dao.MyAccountDAO;
 import kr.wonil.myspringboot.mymanage.data.entity.MyAccount;
 import kr.wonil.myspringboot.mymanage.data.entity.MyAccountSample;
+import kr.wonil.myspringboot.mymanage.data.entity.MyMemo;
 import kr.wonil.myspringboot.mymanage.repository.MyAccountRepository;
 import kr.wonil.myspringboot.mymanage.repository.MyAccountSampleRepository;
+import kr.wonil.myspringboot.mymanage.repository.MyMemoRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +21,8 @@ public class MyAccountDAOImpl implements MyAccountDAO {
 
     private final MyAccountRepository myAccountRepository;
     private final MyAccountSampleRepository myAccountSampleRepository;
-    private Logger LOGGER = LoggerFactory.getLogger(MyAccountDAOImpl.class);
+
+    private final Logger LOGGER = LoggerFactory.getLogger(MyAccountDAOImpl.class);
 
     @Override
     public List<MyAccount> selectMyAccount() {
@@ -49,6 +52,8 @@ public class MyAccountDAOImpl implements MyAccountDAO {
 
         return null;
     }
+
+
 
     @Override
     public MyAccount insertMyAccount(MyAccount myAccount) {
@@ -102,4 +107,5 @@ public class MyAccountDAOImpl implements MyAccountDAO {
         }
 
     }
+
 }
