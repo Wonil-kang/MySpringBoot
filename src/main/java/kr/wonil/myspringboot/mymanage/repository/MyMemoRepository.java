@@ -13,7 +13,7 @@ public interface MyMemoRepository extends JpaRepository<MyMemo, Integer> {
             , nativeQuery = true)
     List<MyMemo> findAll();
 
-    @Query(value = "select * from MY_MEMO_TB order by rand() limit 1"
+    @Query(value = "select * from MY_MEMO_TB where use_yn = 'Y' order by rand() limit 1"
             , nativeQuery = true)
     List<MyMemo> findRandomRecord();
 
