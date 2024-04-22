@@ -20,4 +20,8 @@ public class MyMemoDto {
         useFlag = entity.getUseFlag();
     }
 
+    public MyMemoDto(){
+
+    }
+
 }
