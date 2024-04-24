@@ -33,5 +33,7 @@ public interface MyInvestDAO {
 
     public List<SnPYoY> selectSnpYoY();
 
+    public List<SnpPriceToTop> selectSnpPriceToTop();
+
 
 }

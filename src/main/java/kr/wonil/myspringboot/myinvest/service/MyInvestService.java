@@ -29,4 +29,6 @@ public interface MyInvestService {
 
     List<SnPYoYDto> getSnpYoY();
 
+    List<SnpPriceToTopDto> getSnpPriceToTop();
+
 }

@@ -122,6 +122,16 @@ public class InvestController {
 
     }
 
+    @GetMapping("/snp-price-to-top")
+    public ResponseEntity<List<SnpPriceToTopDto>> getSnpPriceToTop() {
+
+        List<SnpPriceToTopDto> list = myInvestService.getSnpPriceToTop();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
+
 
     @GetMapping("/my-invest-total-status")
     public ResponseEntity<List<MyInvestTotalStatusDto>> getMyInvestTotalStatus() {
