@@ -161,6 +161,17 @@ public class MyExpenseController {
 
     }
 
+    @GetMapping("/recent-used-expense-codes-by-transaction-id")
+    public ResponseEntity<List<ExpenseCodeDto>> getRecentUsedExpenseCodesByTransactionId(
+            @RequestParam String transactionId
+    ) {
+
+        List<ExpenseCodeDto> list = myExpenseService.getRecentUsedExpenseCodesByTransactionId(transactionId);
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
 
 
     @GetMapping("/my-transaction-by-transaction-id")

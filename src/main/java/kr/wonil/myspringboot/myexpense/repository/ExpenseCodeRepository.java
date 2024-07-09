@@ -36,6 +36,22 @@ public interface ExpenseCodeRepository extends JpaRepository<ExpenseCode, Intege
 
 
 
+    @Query(value = "" +
+            "WITH CODE_STAT AS" +
+            "   (select t.transaction_info, ect.EXPENSE_CODE, count(ect.EXPENSE_CODE) as cnt from expense_code_tb ect, my_Transaction_tb t" +
+            "       where 1=1" +
+            "       and ect.EXPENSE_CODE = t.EXPENSE_CODE" +
+            "       group by ect.EXPENSE_CODE, t.transaction_info" +
+            "       order by transaction_info, cnt desc)" +
+            "select TT.*" +
+            "    from expense_code_tb TT, CODE_STAT CS" +
+            "    where 1=1" +
+            "    AND TT.EXPENSE_CODE = CS.EXPENSE_CODE" +
+            "    AND CS.transaction_info = (select transaction_info from my_Transaction_tb where transaction_id = :transactionId)" +
+            "    order by cnt desc"
+            , nativeQuery = true)
+    List<ExpenseCode> selectExpenseCodesByTransactionId(@Param("transactionId") String transactionId);
+
 
     // @Query(value = "SELECT u FROM User u WHERE u.name IN :names")
     // List<User> findUserByNameList(@Param("names") Collection<String> names);

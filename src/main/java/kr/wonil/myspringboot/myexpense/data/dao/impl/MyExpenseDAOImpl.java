@@ -195,6 +195,13 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
         return list;
     }
 
+    public List<ExpenseCode> selectRecentUsedExpenseCodesByTransactionId(String transactionId) {
+
+        List<ExpenseCode> list = expenseCodeRepository.selectExpenseCodesByTransactionId(transactionId);
+
+        return list;
+    }
+
     @Override
     public List<MyTransactionView> selectMyTransactionsByExpenseCode(String expenseCode, String date) {
 

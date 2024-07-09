@@ -21,6 +21,8 @@ public interface MyExpenseDAO {
     public List<ExpenseCode> selectExpenseCodes();
     public List<ExpenseCode> selectRecentUsedExpenseCodes();
     public List<ExpenseCode> selectRecentUsedExpenseCodesByTransactionInfo(String transactionInfo);
+    public List<ExpenseCode> selectRecentUsedExpenseCodesByTransactionId(String transactionId);
+
     public List<MyTransactionView> selectMyTransactionsByTransactionInfo(String transactionInfo);
 
     public List<MyTransaction> selectMyTransactionsByExpenseCode(String expenseCode);

@@ -436,6 +436,24 @@ public class MyExpenseServiceImpl implements MyExpenseService {
     }
 
     @Override
+    public ArrayList<ExpenseCodeDto> getRecentUsedExpenseCodesByTransactionId(String transactionId) {
+        ArrayList<ExpenseCodeDto> dtoList = new ArrayList<>();
+        List<ExpenseCode> list
+                = myExpenseDAO.selectRecentUsedExpenseCodesByTransactionId(transactionId);
+
+        ExpenseCodeDto dto;
+
+        for(ExpenseCode entity : list){
+
+            dto = new ExpenseCodeDto(entity);
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+    }
+
+
+    @Override
     public ArrayList<MyTransactionViewDto> getMyUncheckedTransaction() {
         ArrayList<MyTransactionViewDto> dtoList = new ArrayList<>();
         List<MyTransactionView> list

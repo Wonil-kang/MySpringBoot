@@ -31,6 +31,9 @@ public interface MyExpenseService {
     public ArrayList<ExpenseCodeDto> getRecentUsedExpenseCodes();
     public ArrayList<ExpenseCodeDto> getExpenseCodes();
     public ArrayList<ExpenseCodeDto> getRecentUsedExpenseCodesByTransactionInfo(String transactionInfo);
+    public ArrayList<ExpenseCodeDto> getRecentUsedExpenseCodesByTransactionId(String transactionId);
+
+
     public ArrayList<MyTransactionViewDto> getMyTransactionsByTransactionInfo(String transactionInfo);
     public ArrayList<MyTransactionViewDto> getMyTransactionsByKeyword(String transactionInfo);
 
