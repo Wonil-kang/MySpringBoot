@@ -12,7 +12,15 @@ public interface MyTransactionViewRepository extends JpaRepository<MyTransaction
 
     List<MyTransactionView> findAllByTransactionInfoLikeAndExpenseCodeNotOrderByDateTimeDesc(String transactionIfo, String expenseCode);
 
-    List<MyTransactionView> findAllByTransactionIdLikeAndExpenseCodeNotOrderByDateTimeDesc(String transactionIfo, String expenseCode);
+    @Query(value = "select mt from MyTransactionView mt " +
+            "   where mt.useFlag = 'Y'" +
+            "       and mt.canceledTransactionId = '-'" +
+            "       and mt.expenseCode <> '-'" +
+            "       and mt.currency = 'KRW'" +
+            "       and mt.transactionInfo = (select vv.transactionInfo from MyTransactionView vv where vv.transactionId = :transactionId)" +
+            "   order by mt.dateTime desc"
+            , nativeQuery = false)
+    List<MyTransactionView> findAllByTransactionIdOrderByDateTimeDesc(String transactionId);
 
 
     @Query(value = "select mt from MyTransactionView mt " +

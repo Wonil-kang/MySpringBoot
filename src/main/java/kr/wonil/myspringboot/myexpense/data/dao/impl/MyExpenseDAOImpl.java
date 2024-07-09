@@ -118,7 +118,7 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     @Override
     public List<MyTransactionView> selectMyTransactionsByTransactionId(String transactionId) {
 
-        List<MyTransactionView> list = myTransactionViewRepository.findAllByTransactionIdLikeAndExpenseCodeNotOrderByDateTimeDesc(transactionId, "-");
+        List<MyTransactionView> list = myTransactionViewRepository.findAllByTransactionIdOrderByDateTimeDesc(transactionId);
         return list;
     }
 
