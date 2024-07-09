@@ -310,6 +310,25 @@ public class MyExpenseServiceImpl implements MyExpenseService {
         return dtoList;
     }
 
+
+    @Override
+    public ArrayList<MyTransactionViewDto> getMyTransactionsByTransactionId(String transactionId) {
+        ArrayList<MyTransactionViewDto> dtoList = new ArrayList<>();
+        List<MyTransactionView> list
+                = myExpenseDAO.selectMyTransactionsByTransactionId(transactionId);
+
+        MyTransactionViewDto dto;
+
+        for(MyTransactionView entity : list){
+
+            dto = new MyTransactionViewDto(entity);
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+    }
+
+
     @Override
     public ArrayList<MyTransactionViewDto> getMyTransactionsByKeyword(String keyword) {
         ArrayList<MyTransactionViewDto> dtoList = new ArrayList<>();
@@ -438,6 +457,7 @@ public class MyExpenseServiceImpl implements MyExpenseService {
     @Override
     public ArrayList<ExpenseCodeDto> getRecentUsedExpenseCodesByTransactionId(String transactionId) {
         ArrayList<ExpenseCodeDto> dtoList = new ArrayList<>();
+
         List<ExpenseCode> list
                 = myExpenseDAO.selectRecentUsedExpenseCodesByTransactionId(transactionId);
 

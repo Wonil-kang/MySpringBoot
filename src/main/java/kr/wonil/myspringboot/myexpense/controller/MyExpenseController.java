@@ -195,6 +195,16 @@ public class MyExpenseController {
 
     }
 
+    @GetMapping("/my-transactions-by-transaction-id")
+    public ResponseEntity<List<MyTransactionViewDto>> getMyTransactionsByTransactionId(
+            @RequestParam String transactionId) {
+
+        List<MyTransactionViewDto> list = myExpenseService.getMyTransactionsByTransactionId(transactionId);
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
     @GetMapping("/my-transactions-by-expense-code")
     public ResponseEntity<List<MyTransactionViewDto>> getMyTransactionsByExpenseCode(
             @RequestParam String expenseCode, @RequestParam String date) {

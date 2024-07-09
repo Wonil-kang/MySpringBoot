@@ -35,6 +35,8 @@ public interface MyExpenseService {
 
 
     public ArrayList<MyTransactionViewDto> getMyTransactionsByTransactionInfo(String transactionInfo);
+    public ArrayList<MyTransactionViewDto> getMyTransactionsByTransactionId(String transactionId);
+
     public ArrayList<MyTransactionViewDto> getMyTransactionsByKeyword(String transactionInfo);
 
     public ArrayList<MyTransactionViewDto> getMyTransactionsByExpenseCode(String expenseCode, String date);

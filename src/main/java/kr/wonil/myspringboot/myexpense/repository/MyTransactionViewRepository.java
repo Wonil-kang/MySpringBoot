@@ -12,6 +12,8 @@ public interface MyTransactionViewRepository extends JpaRepository<MyTransaction
 
     List<MyTransactionView> findAllByTransactionInfoLikeAndExpenseCodeNotOrderByDateTimeDesc(String transactionIfo, String expenseCode);
 
+    List<MyTransactionView> findAllByTransactionIdLikeAndExpenseCodeNotOrderByDateTimeDesc(String transactionIfo, String expenseCode);
+
 
     @Query(value = "select mt from MyTransactionView mt " +
             "   where mt.expenseCode = :expenseCode " +
