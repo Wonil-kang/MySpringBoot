@@ -51,6 +51,8 @@ public interface MyExpenseService {
 
     public ArrayList<MyTransactionViewDto> getMyUncheckedTransaction();
 
+    public ArrayList<MyExpenseStatisticDto> getMyExpenseStatistic();
+
     public ArrayList<MyMonthlyExpenseByExpenseCodeDto> getMyMonthlyExpenseByExpenseCode();
 
     public ArrayList<MyMonthlyExpenseByCategoryDto> getMyMonthlyExpenseByCategory();

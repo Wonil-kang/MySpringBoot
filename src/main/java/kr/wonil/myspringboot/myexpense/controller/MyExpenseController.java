@@ -228,6 +228,15 @@ public class MyExpenseController {
 
     }
 
+    @GetMapping("/my-expense-statistic")
+    public ResponseEntity<List<MyExpenseStatisticDto>> getMyTransactionsByDate() {
+
+        List<MyExpenseStatisticDto> list = myExpenseService.getMyExpenseStatistic();
+
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+
+    }
+
     @GetMapping("/my-transactions-by-category-code")
     public ResponseEntity<List<MyTransactionViewDto>> getMyTransactionsByCategoryCode(
             @RequestParam String expenseCode, @RequestParam String date) {

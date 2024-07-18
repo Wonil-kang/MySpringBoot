@@ -293,6 +293,24 @@ public class MyExpenseServiceImpl implements MyExpenseService {
         return dtoList;
     }
 
+
+    @Override
+    public ArrayList<MyExpenseStatisticDto> getMyExpenseStatistic() {
+        ArrayList<MyExpenseStatisticDto> dtoList = new ArrayList<>();
+        List<MyExpenseStatistic> list
+                = myExpenseDAO.selectMyExpenseStatistic();
+
+        MyExpenseStatisticDto dto;
+
+        for(MyExpenseStatistic entity : list){
+
+            dto = new MyExpenseStatisticDto(entity);
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+    }
+
     @Override
     public ArrayList<MyTransactionViewDto> getMyTransactionsByTransactionInfo(String transactionInfo) {
         ArrayList<MyTransactionViewDto> dtoList = new ArrayList<>();

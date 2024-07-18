@@ -60,4 +60,6 @@ public interface MyExpenseDAO {
 
     public List<MyMonthlyExpenseByCategory> selectMyMonthlyExpenseByCategory();
 
+    public List<MyExpenseStatistic> selectMyExpenseStatistic();
+
 }
