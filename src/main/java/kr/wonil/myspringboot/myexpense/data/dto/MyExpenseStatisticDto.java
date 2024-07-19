@@ -18,6 +18,7 @@ public class MyExpenseStatisticDto {
         this.expenseCode = entity.getExpenseCode();
         this.categoryName = entity.getCategoryName();
         this.codeName = entity.getCodeName();
+        this.currentMonthExpense = entity.getCurrentMonthExpense();
         this.averageExpense3Months = entity.getAverageExpense3Months();
         this.averageExpense6Months = entity.getAverageExpense6Months();
         this.averageExpense1Year = entity.getAverageExpense1Year();
