@@ -47,7 +47,7 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     @Override
     public List<MyWeeklyExpenseTotal> selectMyWeeklyExpenseTotal(String year){
 
-        List<MyWeeklyExpenseTotal> list = myWeeklyExpenseTotalRepository.selectMyWeeklyExpenseTotalByYear(year);
+        List<MyWeeklyExpenseTotal> list = myWeeklyExpenseTotalRepository.findMyWeeklyExpenseTotalByYear(year);
         return list;
     }
 

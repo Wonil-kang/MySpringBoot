@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface MyWeeklyExpenseTotalRepository extends JpaRepository<MyWeeklyExpenseTotal, String> {
 
-    List<MyWeeklyExpenseTotal> selectMyWeeklyExpenseTotalByYear(String year);
+    List<MyWeeklyExpenseTotal> findMyWeeklyExpenseTotalByYear(String year);
 }
