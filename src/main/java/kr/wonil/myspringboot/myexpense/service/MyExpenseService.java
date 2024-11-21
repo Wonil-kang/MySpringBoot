@@ -65,4 +65,5 @@ public interface MyExpenseService {
 
     public MyTransaction updateMyTransaction(MyTransactionDto[] dtoArr);
 
+    public ArrayList<MyWeeklyExpenseTotalDto> getMyWeeklyExpenseTotal(String year);
 }

@@ -62,4 +62,6 @@ public interface MyExpenseDAO {
 
     public List<MyExpenseStatistic> selectMyExpenseStatistic();
 
+    public List<MyWeeklyExpenseTotal> selectMyWeeklyExpenseTotal(String year);
+
 }

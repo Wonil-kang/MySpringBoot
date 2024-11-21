@@ -564,6 +564,24 @@ public class MyExpenseServiceImpl implements MyExpenseService {
         return dtoList;
     }
 
+    public ArrayList<MyWeeklyExpenseTotalDto> getMyWeeklyExpenseTotal(String year){
+
+        ArrayList<MyWeeklyExpenseTotalDto> dtoList = new ArrayList<>();
+
+        List<MyWeeklyExpenseTotal> list
+                = myExpenseDAO.selectMyWeeklyExpenseTotal(year);
+
+        MyWeeklyExpenseTotalDto dto;
+
+            for(MyWeeklyExpenseTotal entity : list){
+
+            dto = new MyWeeklyExpenseTotalDto(entity);
+            dtoList.add(dto);
+        }
+
+            return dtoList;
+    }
+
     @Override
     public ArrayList<MyMonthExpenseByTransactionNameDto> getMyMonthExpenseByTransactionName(String month) {
         ArrayList<MyMonthExpenseByTransactionNameDto> dtoList = new ArrayList<>();

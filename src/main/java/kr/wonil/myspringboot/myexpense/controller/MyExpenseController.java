@@ -59,6 +59,15 @@ public class MyExpenseController {
         return ResponseEntity.status(HttpStatus.OK).body(dtoList);
     }
 
+    @GetMapping("/my-weekly-expense-total")
+    public ResponseEntity<List<MyWeeklyExpenseTotalDto>> getMyWeeklyExpenseTotal(@RequestParam String year) {
+
+        List<MyWeeklyExpenseTotalDto> dtoList = myExpenseService.getMyWeeklyExpenseTotal(year);
+
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+    }
+
+
     @GetMapping("/my-monthly-expense-total-summary")
     public ResponseEntity<MyMonthlyExpenseTotalSummaryDto> getMyMonthlyExpenseTotalSummary(
             @RequestParam String month) {

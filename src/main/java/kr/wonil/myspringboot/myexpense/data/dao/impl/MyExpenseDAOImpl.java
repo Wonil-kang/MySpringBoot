@@ -32,6 +32,7 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     private final MyMonthlyExpenseByExpenseCodeRepository myMonthlyExpenseByExpenseCodeRepository;
     private final MyMonthlyExpenseByCategoryRepository myMonthlyExpenseByCategoryRepository;
     private final MyExpenseStatisticRepository myExpenseStatisticRepository;
+    private final MyWeeklyExpenseTotalRepository myWeeklyExpenseTotalRepository;
 
     private Logger LOGGER = LoggerFactory.getLogger(MyExpenseDAOImpl.class);
 
@@ -40,6 +41,13 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     public List<MyMonthlyExpenseCode> selectMyMonthlyExpenseCode() {
 
         List<MyMonthlyExpenseCode> list = myMonthlyExpenseCodeRepository.findAll();
+        return list;
+    }
+
+    @Override
+    public List<MyWeeklyExpenseTotal> selectMyWeeklyExpenseTotal(String year){
+
+        List<MyWeeklyExpenseTotal> list = myWeeklyExpenseTotalRepository.selectMyWeeklyExpenseTotalByYear(year);
         return list;
     }
 
