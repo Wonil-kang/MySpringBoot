@@ -18,6 +18,7 @@ public class MySPLGStatusDto {
     private double stockPrice;
     private double fxRate;
     private double percentile;
+    private double priceToTopRatio;
     private double priceDifference;
     private double priceDifferenceRatio;
     private int numberOfStock;
@@ -38,6 +39,7 @@ public class MySPLGStatusDto {
         this.stockPrice = entity.getStockPrice();
         this.fxRate = entity.getFxRate();
         this.percentile = entity.getPercentile();
+        this.priceToTopRatio = entity.getPriceToTopRatio();
         this.priceDifference = entity.getPriceDifference();
         this.priceDifferenceRatio = entity.getPriceDifferenceRatio();
         this.numberOfStock = entity.getNumberOfStock();

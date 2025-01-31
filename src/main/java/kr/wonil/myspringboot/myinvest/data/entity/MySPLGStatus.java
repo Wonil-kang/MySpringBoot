@@ -29,6 +29,8 @@ public class MySPLGStatus {
     private double fxRate;
     @Column(name = "PECENTILE")
     private double percentile;
+    @Column(name = "PRICE_TO_TOP")
+    private double priceToTopRatio;
     @Column(name = "PRICE_DIFFERENCE")
     private double priceDifference;
     @Column(name = "PRICE_DIFFERENCE_RATIO")
