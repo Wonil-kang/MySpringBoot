@@ -1,14 +1,8 @@
 package kr.wonil.myspringboot.myinvest.data.dao.impl;
 
 import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
-import kr.wonil.myspringboot.myinvest.data.entity.LastStockPrice;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockHistory;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockPriceFlow;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockStatus;
-import kr.wonil.myspringboot.myinvest.repository.LastStockPriceRepository;
-import kr.wonil.myspringboot.myinvest.repository.MyStockHistoryRepository;
-import kr.wonil.myspringboot.myinvest.repository.MyStockPriceFlowRepository;
-import kr.wonil.myspringboot.myinvest.repository.MyStockStatusRepository;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
+import kr.wonil.myspringboot.myinvest.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,6 +18,7 @@ public class MyStockDaoImpl implements MyStockDAO {
     private final LastStockPriceRepository lastStockPriceRepository;
     private final MyStockPriceFlowRepository myStockPriceFlowRepository;
     private final MyStockHistoryRepository myStockHistoryRepository;
+    private final MySPLGStatusRepository mySPLGStatusRepository;
 
 
     @Override
@@ -32,6 +27,11 @@ public class MyStockDaoImpl implements MyStockDAO {
         List<MyStockStatus> myStockStatuses = myStockStatusRepository.findAll();
 
         return myStockStatuses;
+    }
+
+    @Override
+    public List<MySPLGStatus> selectMyLastSPLGStatus() {
+        return mySPLGStatusRepository.findLastData();
     }
 
     @Override

@@ -30,6 +30,14 @@ public class StockController {
 
     }
 
+    @GetMapping(value = "/my-splg-status/last")
+    public ResponseEntity<List<MySPLGStatusDto>> getMyLastSPLGStatus(){
+
+        List<MySPLGStatusDto> dtoList = myStockService.getMyLastSPLGStatus();
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+
+    }
+
     @GetMapping(value = "/my-stock-price-flow")
     public ResponseEntity<List<MyStockPriceFlowDto>> getMyStockPriceFlow(){
 

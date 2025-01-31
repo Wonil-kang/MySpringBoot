@@ -1,14 +1,8 @@
 package kr.wonil.myspringboot.myinvest.service.impl;
 
 import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
-import kr.wonil.myspringboot.myinvest.data.dto.LastStockPriceDto;
-import kr.wonil.myspringboot.myinvest.data.dto.MyStockHistoryDto;
-import kr.wonil.myspringboot.myinvest.data.dto.MyStockPriceFlowDto;
-import kr.wonil.myspringboot.myinvest.data.dto.MyStockStatusDto;
-import kr.wonil.myspringboot.myinvest.data.entity.LastStockPrice;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockHistory;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockPriceFlow;
-import kr.wonil.myspringboot.myinvest.data.entity.MyStockStatus;
+import kr.wonil.myspringboot.myinvest.data.dto.*;
+import kr.wonil.myspringboot.myinvest.data.entity.*;
 import kr.wonil.myspringboot.myinvest.service.MyStockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -111,6 +105,23 @@ public class MyStockServiceImpl implements MyStockService {
         for(LastStockPrice entity : entityList){
 
             dto = new LastStockPriceDto(entity);
+            dtoList.add(dto);
+
+        }
+
+        return dtoList;
+    }
+
+    @Override
+    public List<MySPLGStatusDto> getMyLastSPLGStatus() {
+
+        List<MySPLGStatus> entityList = myStockDAO.selectMyLastSPLGStatus();
+        List<MySPLGStatusDto> dtoList = new ArrayList<>();
+        MySPLGStatusDto dto = null;
+
+        for(MySPLGStatus entity : entityList){
+
+            dto = new MySPLGStatusDto(entity);
             dtoList.add(dto);
 
         }

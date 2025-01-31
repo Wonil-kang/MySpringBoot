@@ -9,6 +9,8 @@ public interface MyStockDAO {
 
     public List<MyStockStatus> selectMyStockStatus();
 
+    public List<MySPLGStatus> selectMyLastSPLGStatus();
+
     public List<LastStockPrice> selectLastStockPrice();
 
     public List<MyStockPriceFlow> selectMyStockPriceFlow();
