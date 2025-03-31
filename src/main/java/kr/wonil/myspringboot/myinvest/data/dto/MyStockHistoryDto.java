@@ -17,6 +17,33 @@ public class MyStockHistoryDto {
     private int smsId;
     private String useFlag;
 
+    public MyStockHistoryDto(){
+
+        this.smsBody = "-";
+        this.useFlag = "Y";
+
+    }
+
+    public void setStockTradingDate(String tradingDate) {
+
+        if(tradingDate.length() == 12)
+            tradingDate = tradingDate + "00";
+
+        this.stockTradingDate = tradingDate;
+    }
+    public void setTotalTradingPrice() {
+
+        try {
+
+            totalPrice = numberOfStock * stockPrice;
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            System.err.println(e.toString());
+        }
+
+    }
+
     public MyStockHistoryDto(MyStockHistory myStockHistory) {
 
         stockNumber = myStockHistory.getStockNumber();

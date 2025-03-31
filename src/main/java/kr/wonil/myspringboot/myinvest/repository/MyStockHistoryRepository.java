@@ -17,4 +17,6 @@ public interface MyStockHistoryRepository extends JpaRepository<MyStockHistory, 
     @Query(value = "select m from MyStockHistory m order by m.stockTradingDate desc ", nativeQuery = false)
     Page<MyStockHistory> findMyStockHistories(Pageable pageable);
 
+
+
 }

@@ -18,4 +18,6 @@ public interface MyStockDAO {
     public List<MyStockHistory> selectMyStockHistory(int limit);
 
     public List<MyStockHistory> selectMyStockHistoryByStockNumber(String stockNumber, int limit);
+
+    public MyStockHistory insertMyStockHistory(MyStockHistory myStockHistory);
 }

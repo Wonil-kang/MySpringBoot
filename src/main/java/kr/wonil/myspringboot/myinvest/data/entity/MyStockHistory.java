@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import kr.wonil.myspringboot.myinvest.data.dto.MyStockHistoryDto;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 
@@ -43,5 +44,22 @@ public class MyStockHistory {
     @Column(name = "USE_YN")
     private String useFlag;
 
+    public MyStockHistory(MyStockHistoryDto dto){
 
+        this.stockId = dto.getStockId();
+        this.stockNumber = dto.getStockNumber();
+        this.stockName = dto.getStockName();
+        this.stockTradingDate = dto.getStockTradingDate();
+        this.stockPrice = dto.getStockPrice();
+        this.numberOfStock = dto.getNumberOfStock();
+        this.totalPrice = dto.getTotalPrice();
+        this.smsBody = dto.getSmsBody();
+        this.smsId = dto.getSmsId();
+        this.useFlag = dto.getUseFlag();
+
+    }
+
+    public MyStockHistory() {
+
+    }
 }

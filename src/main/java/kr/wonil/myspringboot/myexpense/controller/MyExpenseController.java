@@ -335,10 +335,24 @@ public class MyExpenseController {
     }
 
 
-    @PostMapping(value = "/insert-my-new-transaction" )
-    public String uploadMyNewTransaction(@RequestBody MyTransactionDto[] dtoArr){
+    @PostMapping(value = "/insert-my-new-transactions" )
+    public String uploadMyNewTransactions(@RequestBody MyTransactionDto[] dtoArr){
 
         LOGGER.info("uploadMyNewTransaction is called(" + dtoArr.length + ")");
+        myExpenseService.saveMyTransaction(dtoArr);
+
+        return "";
+
+    }
+
+    @PostMapping(value = "/insert-my-new-transaction" )
+    public String uploadMyNewTransaction(@RequestBody MyTransactionDto dto){
+
+        LOGGER.info("uploadMyNewTransaction is called");
+
+        MyTransactionDto[] dtoArr = new MyTransactionDto[1];
+        dtoArr[0] = dto;
+
         myExpenseService.saveMyTransaction(dtoArr);
 
         return "";

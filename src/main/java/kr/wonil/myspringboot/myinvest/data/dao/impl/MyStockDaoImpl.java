@@ -1,5 +1,6 @@
 package kr.wonil.myspringboot.myinvest.data.dao.impl;
 
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransaction;
 import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
 import kr.wonil.myspringboot.myinvest.data.entity.*;
 import kr.wonil.myspringboot.myinvest.repository.*;
@@ -61,5 +62,25 @@ public class MyStockDaoImpl implements MyStockDAO {
         Page<MyStockHistory> page = myStockHistoryRepository.findMyStockHistoriesByStockNumber(stockNumber, PageRequest.of(0, limit));
 
         return page.getContent();
+    }
+
+
+
+
+    @Override
+    public MyStockHistory insertMyStockHistory(MyStockHistory myStockHistory) {
+
+        MyStockHistory result = null;
+
+        try {
+
+            result = myStockHistoryRepository.save(myStockHistory);
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

@@ -77,4 +77,19 @@ public class StockController {
         return ResponseEntity.status(HttpStatus.OK).body(dtoList);
 
     }
+
+    @GetMapping(value = "/insert-my-stock_history")
+    public ResponseEntity<List<MyStockHistoryDto>> uploadMyStockHistories(
+            @RequestParam MyStockHistoryDto dto){
+
+        List<MyStockHistoryDto> dtoList = null;
+
+        MyStockHistoryDto[] myStockHistoryDtos = new MyStockHistoryDto[1];
+        myStockHistoryDtos[0] = dto;
+
+        dtoList = myStockService.saveMyStockHistories(myStockHistoryDtos);
+
+        return ResponseEntity.status(HttpStatus.OK).body(dtoList);
+
+    }
 }

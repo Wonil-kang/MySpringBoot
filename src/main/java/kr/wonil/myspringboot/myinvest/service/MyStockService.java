@@ -12,5 +12,6 @@ public interface MyStockService {
     public List<MyStockPriceFlowDto> getMyStockPriceFlow();
     public List<MyStockHistoryDto> getMyStockHistories(int limit);
     public List<MyStockHistoryDto> getMyStockHistoriesByStockNumber(String stockNumber, int limit);
+    public List<MyStockHistoryDto> saveMyStockHistories(MyStockHistoryDto[] myStockHistoryDtos);
 
 }

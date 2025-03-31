@@ -1,9 +1,12 @@
 package kr.wonil.myspringboot.myinvest.service.impl;
 
+import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransaction;
 import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
 import kr.wonil.myspringboot.myinvest.data.dto.*;
 import kr.wonil.myspringboot.myinvest.data.entity.*;
 import kr.wonil.myspringboot.myinvest.service.MyStockService;
+import kr.wonil.myspringboot.util.DateUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -127,5 +130,27 @@ public class MyStockServiceImpl implements MyStockService {
         }
 
         return dtoList;
+    }
+
+    @Override
+    public List<MyStockHistoryDto> saveMyStockHistories(MyStockHistoryDto[] dtoArr) {
+
+        for(int i=0; i< dtoArr.length; i++) {
+
+            MyStockHistoryDto dto = dtoArr[i];
+
+            MyStockHistory entity = new MyStockHistory(dto);
+
+            entity.setRdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+            entity.setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+            entity.setModifierId("SYS");
+            entity.setRegisterId("SYS");
+
+            MyStockHistory result = myStockDAO.insertMyStockHistory(entity);
+
+        }
+
+        return null;
+
     }
 }
