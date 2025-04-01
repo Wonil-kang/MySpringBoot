@@ -1,14 +1,16 @@
 package kr.wonil.myspringboot.myinvest.service.impl;
 
-import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
-import kr.wonil.myspringboot.myexpense.data.entity.MyTransaction;
+import jakarta.persistence.EntityManager;
 import kr.wonil.myspringboot.myinvest.data.dao.MyStockDAO;
 import kr.wonil.myspringboot.myinvest.data.dto.*;
 import kr.wonil.myspringboot.myinvest.data.entity.*;
 import kr.wonil.myspringboot.myinvest.service.MyStockService;
 import kr.wonil.myspringboot.util.DateUtil;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,9 @@ import java.util.List;
 public class MyStockServiceImpl implements MyStockService {
 
     private final MyStockDAO myStockDAO;
+    private final EntityManager entityManager;
+
+    private final Logger LOGGER = LoggerFactory.getLogger(MyStockServiceImpl.class);
 
 
     @Override
@@ -132,6 +137,7 @@ public class MyStockServiceImpl implements MyStockService {
         return dtoList;
     }
 
+    @Transactional
     @Override
     public List<MyStockHistoryDto> saveMyStockHistories(MyStockHistoryDto[] dtoArr) {
 
@@ -149,6 +155,23 @@ public class MyStockServiceImpl implements MyStockService {
             MyStockHistory result = myStockDAO.insertMyStockHistory(entity);
 
         }
+
+        // * -------------------- STOCK INFO UPDATE PROCEDURE -------------------- * //
+
+        // Flush to ensure inserts are actually sent to DB
+        entityManager.flush();
+
+        try {
+
+            entityManager.createStoredProcedureQuery("PRC_UPDATE_MY_STOCK_STATUS").execute();
+            entityManager.createStoredProcedureQuery("PRC_UPDATE_MY_STOCK_PRICE_FLOW").execute();
+
+        }catch (Exception ex) {
+            LOGGER.error("Failed to execute my stock procedure", ex);
+            throw ex; // 트랜잭션 유지하려면 다시 던져야 함
+        }
+
+        // * -------------------- STOCK INFO UPDATE PROCEDURE -------------------- * //
 
         return null;
 
