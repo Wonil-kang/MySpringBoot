@@ -6,6 +6,7 @@ import kr.wonil.myspringboot.myinvest.data.dto.StockDto;
 import kr.wonil.myspringboot.myinvest.service.MyStockService;
 import kr.wonil.myspringboot.mymanage.service.HolidayService;
 import kr.wonil.myspringboot.util.DateUtil;
+import kr.wonil.myspringboot.util.NumberUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
