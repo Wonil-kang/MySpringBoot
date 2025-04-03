@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Slf4j
@@ -66,12 +67,6 @@ public class StockInfoCollectionScheduler {
         log.info("* * * FINISH STOCK INFO COLLECTION SCHEDULER(" + DateUtil.getReadableDate(DateUtil.getCurrentKoreanDateTimeSecond(), "YYYY.MM.DD. HH:mm:SS") + ") * * *");
     }
 
-    // 매일 새벽 2시에 실행
-    @Scheduled(cron = "0 0 2 * * ?")
-    public void runDaily() {
-        // log.info("매일 새벽 2시 작업 실행");
-        // 작업 내용
-    }
 
     public void updateStocks(ArrayList<StockDto> stocks, boolean etfFlag) {
 
@@ -99,5 +94,27 @@ public class StockInfoCollectionScheduler {
             System.out.println(logStr);
         }
 
+    }
+
+
+    // 30분마다 실행
+    @Scheduled(cron = "0 0/30 * * * ?")
+    public void runYahooCrawlerBatch() {
+        try {
+            // .bat 파일 경로를 큰따옴표로 감싸서 공백/한글 경로 문제 방지
+            String batchFilePath = "\"C:\\Users\\wikan\\Dropbox\\000.스크립트\\02.Yahoo_Crawler.bat\"";
+
+            ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", batchFilePath);
+            processBuilder.inheritIO(); // 콘솔 출력 보기 원할 경우
+            Process process = processBuilder.start();
+            int exitCode = process.waitFor();
+
+            System.out.println("Yahoo 크롤러 실행 완료! 종료 코드: " + exitCode);
+
+        } catch (IOException | InterruptedException e) {
+            System.err.println("Yahoo 크롤러 실행 중 오류 발생:");
+            e.printStackTrace();
+            log.error(e.toString());
+        }
     }
 }
