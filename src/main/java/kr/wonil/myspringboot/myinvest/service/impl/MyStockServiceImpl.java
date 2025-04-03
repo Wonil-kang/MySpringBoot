@@ -176,4 +176,25 @@ public class MyStockServiceImpl implements MyStockService {
         return null;
 
     }
+
+    @Override
+    public boolean insertOrUpdateStockInfo(StockDto stockDto) {
+
+        StockInfo stockInfo = myStockDAO.selectStockInfoByKey(stockDto);
+        StockInfo newStockInfo = new StockInfo(stockDto);
+
+        if(stockInfo != null){
+
+            newStockInfo.setRegDateTime(stockInfo.getRegDateTime());
+            newStockInfo.setRegistrantId(stockInfo.getRegistrantId());
+
+            if(myStockDAO.updateStockInfo(newStockInfo) > 0)
+                return true;
+        }
+
+        if(myStockDAO.insertStockInfo(newStockInfo) != null)
+            return true;
+
+        return false;
+    }
 }

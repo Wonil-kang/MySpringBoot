@@ -14,4 +14,5 @@ public interface MyStockService {
     public List<MyStockHistoryDto> getMyStockHistoriesByStockNumber(String stockNumber, int limit);
     public List<MyStockHistoryDto> saveMyStockHistories(MyStockHistoryDto[] myStockHistoryDtos);
 
+    public boolean insertOrUpdateStockInfo(StockDto stockDto);
 }
