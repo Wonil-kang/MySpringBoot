@@ -73,7 +73,7 @@ public class MyTransactionDto {
         transactionAmount = transactionAmount.replaceAll("원", "")
                 .replaceAll(",", "");
 
-        this.transactionAmount = NumberUtil.parseInt(transactionAmount);
+        this.transactionAmount = NumberUtil.parseInt(transactionAmount.trim());
     }
     public void setDateTime(String dateTime, String date, String time) {
 

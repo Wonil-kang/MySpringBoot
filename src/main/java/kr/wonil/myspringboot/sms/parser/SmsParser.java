@@ -199,7 +199,7 @@ public class SmsParser {
         StringTokenizer st = null;
         StringTokenizer stSpace = null;
         String smsBody = sms.getSmsBody();
-        String line, date, time, amount, nextToken;
+        String line, nextToken;
         MyTransactionDto mt = new MyTransactionDto();
 
         mt.setSmsId(sms.getSmsId());
@@ -249,7 +249,10 @@ public class SmsParser {
                     line = stSpace.nextToken();
 
                     if(line.endsWith("원")) {
-                        mt.setTransactionAmount(line.replaceAll("원", "").replaceAll(",", ""));
+                        mt.setTransactionAmount(
+                                line.replaceAll("원", "")
+                                        .replaceAll(",", "")
+                                        .trim());
                     }
 
                     mt.setAccumulatedExpense("-");
@@ -266,12 +269,13 @@ public class SmsParser {
 
 
                     // 신한카드(4735)승인 강*일님 LG  U+통신요금  자동이체 16,500원 정상 승인
+                    // 신한카드(6614)승인 강*일님 LG  U+통신요금  자동이체 25,960원 정상 승인
 
                     mt.setDateTime(sms.getSmsDate().substring(0,6) + "01");
                     mt.setDateTime(DateUtil.shiftMonth(mt.getDateTime(), 1));
                     mt.setDateTime(DateUtil.shiftDay(mt.getDateTime(), -1) + "000000");
 
-                    mt.setCardName(line);
+                    mt.setCardName(line); //신한카드(4735)승인
                     mt.setOwnerName(stSpace.nextToken());
                     mt.setTransactionInfo(stSpace.nextToken("자동이체").trim()); // LG  U+통신요금
                     mt.setInstallmentPlan(stSpace.nextToken(" ")); // 자동이체
