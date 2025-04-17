@@ -82,10 +82,6 @@ public class MySmsServiceImpl implements MySmsService {
             mySms.setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
             mySms.setRegisterId("SYS");
             mySms.setModifierId("SYS");
-            mySms.setReflectTransactionFlag("N");
-            mySms.setTransactionErrorFlag("N");
-            mySms.setReflectStockFlag("N");
-            mySms.setStockErrorFlag("N");
             mySms.setSmsLongDate(dto.getSmsLongDate());
 
             MySms result = mySmsDAO.insertSms(mySms);

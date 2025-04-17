@@ -29,12 +29,4 @@ public class MySms {
     String registerId;
     @Column(name = "MODR_ID")
     String modifierId;
-    @Column(name = "RFLT_TRANSACTION_YN")
-    String reflectTransactionFlag;
-    @Column(name = "TRANSACTION_ERR_YN")
-    String transactionErrorFlag;
-    @Column(name = "RFLT_STOCK_YN")
-    String reflectStockFlag;
-    @Column(name = "STOCK_ERR_YN")
-    String stockErrorFlag;
 }
