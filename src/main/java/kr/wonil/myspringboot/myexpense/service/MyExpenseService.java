@@ -63,7 +63,11 @@ public interface MyExpenseService {
 
     public MyTransaction saveMyTransaction(MyTransactionDto[] dtoArr);
 
+    public MyTransaction saveMyTransaction(MyTransactionDto dto);
+
     public MyTransaction updateMyTransaction(MyTransactionDto[] dtoArr);
 
     public ArrayList<MyWeeklyExpenseTotalDto> getMyWeeklyExpenseTotal(String year);
+
+    public boolean cancelMyTransaction(MyTransaction myTransaction);
 }

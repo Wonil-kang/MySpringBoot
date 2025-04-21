@@ -335,6 +335,9 @@ public class SmsParser {
                         else
                             mt.setAccumulatedExpense("0");
 
+                        if(mt.getTransactionType().equals("취소"))
+                            mt.setUseFlag("N");
+
                         return mt;
                     }
                 }

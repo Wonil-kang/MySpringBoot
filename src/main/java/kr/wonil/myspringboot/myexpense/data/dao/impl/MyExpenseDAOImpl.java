@@ -52,6 +52,14 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     }
 
     @Override
+    public int cancelMyTransaction(MyTransaction myTransaction) {
+
+        return myTransactionRepository.cancelInfoUpdate(myTransaction.getTransactionId(),
+                myTransaction.getTransactionInfo(),
+                myTransaction.getTransactionAmount());
+    }
+
+    @Override
     public List<MyMonthlyExpenseCode> selectMyMonthlyExpenseCode(String month) {
 
         List<MyMonthlyExpenseCode> list = myMonthlyExpenseCodeRepository.findByMonthOrderBySumDesc(month);

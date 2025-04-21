@@ -64,4 +64,6 @@ public interface MyExpenseDAO {
 
     public List<MyWeeklyExpenseTotal> selectMyWeeklyExpenseTotal(String year);
 
+    public int cancelMyTransaction(MyTransaction myTransaction);
+
 }

@@ -583,6 +583,17 @@ public class MyExpenseServiceImpl implements MyExpenseService {
     }
 
     @Override
+    public boolean cancelMyTransaction(MyTransaction myTransaction) {
+
+        int rst = myExpenseDAO.cancelMyTransaction(myTransaction);
+
+        if(rst > 0)
+            return true;
+
+        return false;
+    }
+
+    @Override
     public ArrayList<MyMonthExpenseByTransactionNameDto> getMyMonthExpenseByTransactionName(String month) {
         ArrayList<MyMonthExpenseByTransactionNameDto> dtoList = new ArrayList<>();
 
@@ -637,6 +648,20 @@ public class MyExpenseServiceImpl implements MyExpenseService {
         }
 
         return null;
+
+    }
+
+
+
+    @Override
+    public MyTransaction saveMyTransaction(MyTransactionDto dto) {
+
+
+        MyTransaction entity = new MyTransaction(dto);
+        MyTransaction result = myExpenseDAO.insertMyTransaction(entity);
+
+
+        return result;
 
     }
 

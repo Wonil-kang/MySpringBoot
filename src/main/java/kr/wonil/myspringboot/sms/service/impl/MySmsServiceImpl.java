@@ -3,6 +3,7 @@ package kr.wonil.myspringboot.sms.service.impl;
 import kr.wonil.myspringboot.myexpense.controller.MyExpenseController;
 import kr.wonil.myspringboot.myexpense.data.dao.MyExpenseDAO;
 import kr.wonil.myspringboot.myexpense.data.dto.MyTransactionDto;
+import kr.wonil.myspringboot.myexpense.data.entity.MyTransaction;
 import kr.wonil.myspringboot.myexpense.service.MyExpenseService;
 import kr.wonil.myspringboot.myinvest.controller.StockController;
 import kr.wonil.myspringboot.myinvest.data.dto.MyStockHistoryDto;
@@ -23,7 +24,7 @@ import java.util.List;
 public class MySmsServiceImpl implements MySmsService {
 
     private final MySmsDAO mySmsDAO;
-    private final MyExpenseController myExpenseController;
+    private final MyExpenseService myExpenseService;
     private final StockController stockController;
 
 
@@ -100,6 +101,7 @@ public class MySmsServiceImpl implements MySmsService {
 
         MyTransactionDto mt = null;
         MyStockHistoryDto msh = null;
+        MyTransaction mtRst = null;
 
         //KB Card
         if(sms.getSourceNumber().equals("15881688"))
@@ -120,11 +122,16 @@ public class MySmsServiceImpl implements MySmsService {
         if(sms.getSourceNumber().equals("01071128408"))
             mt = SmsParser.parseShinhanSms(sms);
 
-        if(mt != null)
-            myExpenseController.uploadMyNewTransaction(mt);
+        if(mt != null) {
+            mtRst = myExpenseService.saveMyTransaction(mt);
+        }
 
         if(msh != null)
             stockController.uploadMyStockHistories(msh);
 
+        if( mtRst != null && mtRst.getTransactionType().equals("취소")){
+
+            myExpenseService.cancelMyTransaction(mtRst);
+        }
     }
 }
