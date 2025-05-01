@@ -27,6 +27,7 @@ public class MyInvestDaoImpl implements MyInvestDAO {
 
     private final SnPYoYRepository snPYoYRepository;
     private final SnpPriceToTopRepository snpPriceToTopRepository;
+    private final PriceToTopRepository priceToTopRepository;
 
 
     @Override
@@ -103,6 +104,13 @@ public class MyInvestDaoImpl implements MyInvestDAO {
 
         return snpPriceToTopRepository.findAll();
     }
+
+    @Override
+    public List<PriceToTop> selectPriceToTop() {
+
+        return priceToTopRepository.findAll();
+    }
+
 
     @Override
     public List<MyMonthlyInvestTotal> selectMyMonthlyInvestTotal() {

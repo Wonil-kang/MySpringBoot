@@ -223,6 +223,23 @@ public class MyInvestServiceImpl implements MyInvestService {
         return dtoList;
     }
 
+
+    @Override
+    public List<PriceToTopDto> getPriceToTop() {
+        List<PriceToTop> entityList = myInvestDAO.selectPriceToTop();
+        List<PriceToTopDto> dtoList = new ArrayList<>();
+        PriceToTopDto dto = null;
+
+        for(PriceToTop entity : entityList){
+
+            dto = new PriceToTopDto(entity);
+            dtoList.add(dto);
+
+        }
+        return dtoList;
+    }
+
+
     @Override
     public List<MyInvestTotalStatusDto> getMyInvestTotalStatus() {
         List<MyInvestTotalStatus> entityList = myInvestDAO.selectMyInvestTotalStatus();
