@@ -679,4 +679,11 @@ public class MyExpenseServiceImpl implements MyExpenseService {
 
     }
 
+
+    public ExpenseCodeDto updateExpenseCodeRecentUsedDate(String expenseCode){
+
+        myExpenseDAO.updateExpenseCodeRecentUsedDate(expenseCode);
+        return new ExpenseCodeDto(myExpenseDAO.selectExpenseCodeByExpenseCode(expenseCode));
+    }
+
 }

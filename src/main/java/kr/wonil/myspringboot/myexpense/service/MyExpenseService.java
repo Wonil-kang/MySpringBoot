@@ -70,4 +70,5 @@ public interface MyExpenseService {
     public ArrayList<MyWeeklyExpenseTotalDto> getMyWeeklyExpenseTotal(String year);
 
     public boolean cancelMyTransaction(MyTransaction myTransaction);
+    public ExpenseCodeDto updateExpenseCodeRecentUsedDate(String expenseCode);
 }

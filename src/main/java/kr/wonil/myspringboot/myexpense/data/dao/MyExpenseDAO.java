@@ -66,4 +66,9 @@ public interface MyExpenseDAO {
 
     public int cancelMyTransaction(MyTransaction myTransaction);
 
+    public int updateExpenseCodeRecentUsedDate(String expenseCode);
+
+    public ExpenseCode selectExpenseCodeByExpenseCode(String expenseCode);
+
+
 }

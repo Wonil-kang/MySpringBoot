@@ -308,4 +308,16 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
     }
 
 
+    @Override
+    public int updateExpenseCodeRecentUsedDate(String expenseCode) {
+
+        return expenseCodeRepository.updateExpenseCodeRecentUsedDate(expenseCode);
+    }
+
+    @Override
+    public ExpenseCode selectExpenseCodeByExpenseCode(String expenseCode){
+        return expenseCodeRepository.selectExpenseCodeByExpenseCode(expenseCode);
+    }
+
+
 }

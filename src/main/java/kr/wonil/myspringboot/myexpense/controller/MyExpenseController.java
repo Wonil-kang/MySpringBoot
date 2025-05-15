@@ -335,6 +335,8 @@ public class MyExpenseController {
     }
 
 
+
+
     @PostMapping(value = "/insert-my-new-transactions" )
     public String uploadMyNewTransactions(@RequestBody MyTransactionDto[] dtoArr){
 
@@ -367,4 +369,17 @@ public class MyExpenseController {
 
         return "";
     }
+
+
+
+    @GetMapping("/update-expense-code-use-date")
+    public ResponseEntity<ExpenseCodeDto> updateExpenseCodeRecentUsedDate(
+            @RequestParam String expenseCode) {
+
+        ExpenseCodeDto dto = myExpenseService.updateExpenseCodeRecentUsedDate(expenseCode);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+
+    }
+
+
 }
