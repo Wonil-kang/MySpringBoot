@@ -291,6 +291,35 @@ public class SmsParser {
 
                     return mt;
                 }
+
+                if(smsBody.contains("자동납부") && smsBody.contains("정상승인")) {
+
+
+                    // [Web발신]
+                    // [신한카드] 자동납부 정상승인 강원일님 04/30 (일시불) 29,490원 서울도시가스(주)
+
+                    // [Web발신]
+                    // [신한카드] 자동납부 정상승인 강원일님 03/31 (일시불) 75,460원 서울도시가스(주)
+
+                    // 신한카드(6614)승인 강*일님 LG  U+통신요금  자동이체 25,960원 정상 승인
+
+                    mt.setCardName(line + " " + stSpace.nextToken() + " " + stSpace.nextToken()); //[신한카드] 자동납부
+                    mt.setOwnerName(stSpace.nextToken()); //강*일님
+                    mt.setDateTime(DateUtil.getCurrentKoreanDateTime().substring(0,4) + stSpace.nextToken().replaceAll("/","") + "000000");
+                    mt.setInstallmentPlan(stSpace.nextToken());
+                    mt.setTransactionAmount(stSpace.nextToken().replaceAll(",", "").trim()); // 자동이체
+                    mt.setTransactionInfo(stSpace.nextToken().trim()); // LG  U+통신요금
+
+                    mt.setAccumulatedExpense("-");
+                    mt.setMemo("-");
+                    mt.setCanceledTransactionId("-");
+                    mt.setCurrency("KRW");
+                    mt.setTransactionType("-");
+                    mt.setExpenseCode("-");
+
+                    return mt;
+                }
+
 					/*
 					 *
 					 * 	[Web발신]
