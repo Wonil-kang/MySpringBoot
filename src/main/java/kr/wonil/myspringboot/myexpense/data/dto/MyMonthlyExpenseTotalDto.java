@@ -26,6 +26,7 @@ public class MyMonthlyExpenseTotalDto {
         exception = entity.getException();
         totalAmount = entity.getTotalAmount();
         cardAmount = entity.getCardAmount();
+        //cardAmount = 0;
 
         int daysOfMonth = DateUtil.getDaysOfMonth(month);
 
