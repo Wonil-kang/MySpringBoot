@@ -12,7 +12,6 @@ import java.util.List;
  @RequiredArgsConstructor
 public class MyInvestDaoImpl implements MyInvestDAO {
 
-    private final BasePointRepository basePointRepository;
     private final MyCoinPriceFlowRepository myCoinPriceFlowRepository;
 
     private final MyMonthlyInvestTotalRepository myMonthlyInvestTotalRepository;
@@ -33,13 +32,6 @@ public class MyInvestDaoImpl implements MyInvestDAO {
     @Override
     public List<MyInvestTotalStatus> selectMyInvestTotalStatus() {
         List<MyInvestTotalStatus> list = myInvestTotalStatusRepository.findAll();
-        return list;
-    }
-
-    @Override
-    public List<BasePoint> selectTotalBasePoint() {
-
-        List<BasePoint> list = basePointRepository.findAll();
         return list;
     }
 

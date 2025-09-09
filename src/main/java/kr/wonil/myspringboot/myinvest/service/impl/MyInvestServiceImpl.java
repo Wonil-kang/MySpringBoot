@@ -18,23 +18,6 @@ public class MyInvestServiceImpl implements MyInvestService {
 
 
     @Override
-    public List<BasePointDto> getTotalBasePoint() {
-
-        List<BasePoint> entityList = myInvestDAO.selectTotalBasePoint();
-        List<BasePointDto> dtoList = new ArrayList<>();
-        BasePointDto dto = null;
-
-        for(BasePoint entity : entityList){
-
-            dto = new BasePointDto(entity);
-            dtoList.add(dto);
-
-        }
-
-        return dtoList;
-    }
-
-    @Override
     public List<MyCoinPriceFlowDto> getMyCoinPriceFlow() {
 
         List<MyCoinPriceFlow> entityList = myInvestDAO.selectMyCoinPriceFlow();

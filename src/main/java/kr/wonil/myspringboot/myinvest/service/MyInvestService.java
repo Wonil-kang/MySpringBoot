@@ -7,7 +7,6 @@ import java.util.List;
 public interface MyInvestService {
 
     public List<MyInvestTotalStatusDto> getMyInvestTotalStatus();
-    public List<BasePointDto> getTotalBasePoint();
 
     public List<MyCoinPriceFlowDto> getMyCoinPriceFlow();
 

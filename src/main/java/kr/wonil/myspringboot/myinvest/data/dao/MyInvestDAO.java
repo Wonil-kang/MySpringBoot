@@ -10,7 +10,6 @@ public interface MyInvestDAO {
 
 
     public List<MyInvestTotalStatus> selectMyInvestTotalStatus();
-    public List<BasePoint> selectTotalBasePoint();
 
     public List<MyCoinPriceFlow> selectMyCoinPriceFlow();
 

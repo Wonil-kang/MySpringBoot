@@ -19,6 +19,9 @@ public class InvestController {
 
     private final MyInvestService myInvestService;
 
+    /*
+     * NO MORE USED 2025.9.9.
+     *
 
     @GetMapping(value = "/total-base-point")
     public ResponseEntity<List<BasePointDto>> getTotalBasePoint(){
@@ -35,6 +38,8 @@ public class InvestController {
         return ResponseEntity.status(HttpStatus.OK).body(dtoList);
 
     }
+
+     */
 
     @GetMapping("/my-monthly-invest-total")
     public ResponseEntity<List<MyMonthlyInvestTotalDto>> getMyMonthlyInvestTotal(
