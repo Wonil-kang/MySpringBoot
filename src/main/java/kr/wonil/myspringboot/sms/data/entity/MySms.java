@@ -14,7 +14,7 @@ public class MySms {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int smsId;
     @Column(name = "SRC_SMS_ID")
-    int sourceSmsId;
+    Integer sourceSmsId;
     @Column(name = "SMS_BODY", columnDefinition = "TEXT")
     String smsBody;
     @Column(name = "SRC_NUMBER")
@@ -31,4 +31,11 @@ public class MySms {
     String registerId;
     @Column(name = "MODR_ID")
     String modifierId;
+
+    public int getSourceSmsId(){
+
+        if(sourceSmsId == null) return -1;
+
+        return sourceSmsId;
+    }
 }
