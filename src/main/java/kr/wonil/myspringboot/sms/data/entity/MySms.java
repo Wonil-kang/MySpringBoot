@@ -13,6 +13,8 @@ public class MySms {
     @Column(name = "SMS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int smsId;
+    @Column(name = "SRC_SMS_ID")
+    int sourceSmsId;
     @Column(name = "SMS_BODY", columnDefinition = "TEXT")
     String smsBody;
     @Column(name = "SRC_NUMBER")

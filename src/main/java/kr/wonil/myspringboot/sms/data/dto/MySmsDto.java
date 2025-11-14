@@ -18,7 +18,7 @@ public class MySmsDto {
 
 
     public MySmsDto(MySms mySms){
-        smsId = mySms.getSmsId();
+        smsId = mySms.getSourceSmsId();
         smsBody = mySms.getSmsBody();
         sourceNumber = mySms.getSourceNumber();
         smsDate = mySms.getSmsDate();

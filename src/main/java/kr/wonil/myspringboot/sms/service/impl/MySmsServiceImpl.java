@@ -76,6 +76,7 @@ public class MySmsServiceImpl implements MySmsService {
 
             MySms mySms = new MySms();
 
+            mySms.setSourceSmsId(dto.getSmsId());
             mySms.setSmsBody(dto.getSmsBody());
             mySms.setSourceNumber(dto.getSourceNumber());
             mySms.setSmsDate(dto.getSmsDate());
