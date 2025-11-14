@@ -11,4 +11,5 @@ public interface MySmsService {
 
     public List<MySmsDto> getLatestMySmsBySmsDate();
     MySms saveMySms(MySmsDto[] mySmsDto);
+    public void insertSmsDataToDB(MySms sms);
 }

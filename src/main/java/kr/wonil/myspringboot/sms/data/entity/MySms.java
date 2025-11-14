@@ -1,7 +1,11 @@
 package kr.wonil.myspringboot.sms.data.entity;
 
 import jakarta.persistence.*;
+import kr.wonil.myspringboot.util.DateUtil;
 import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -38,4 +42,29 @@ public class MySms {
 
         return sourceSmsId;
     }
+
+    public MySms(){
+
+    }
+
+    public MySms(int srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
+
+        // yyyyMMddHHmmss 형태 포매터
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+
+        this.sourceSmsId = srcSmsId;
+        this.sourceNumber = phoneNumber;
+        this.smsBody = messageText;
+        this.smsDate = receivedAt.format(formatter);
+        this.smsLongDate = receivedAt
+                .atZone(java.time.ZoneId.systemDefault())
+                .toInstant()
+                .toEpochMilli();
+
+        setRdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+        setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+        setRegisterId("SYS");
+        setModifierId("SYS");
+    }
+
 }

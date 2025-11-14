@@ -90,15 +90,12 @@ public class MySmsServiceImpl implements MySmsService {
 
             insertSmsDataToDB(result);
 
-            if(mySmsDAO.selectMySmsBySourceNumberAndDate(mySms.getSourceNumber(), mySms.getSmsDate()).size() > 0)
-                continue;
-
         }
         return null;
 
     }
 
-    private void insertSmsDataToDB(MySms sms){
+    public void insertSmsDataToDB(MySms sms){
 
         MyTransactionDto mt = null;
         MyStockHistoryDto msh = null;
