@@ -10,15 +10,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MySmsDto {
 
-    int smsId;
+    Long smsId;
     String smsBody;
     String sourceNumber;
     String smsDate;
     long smsLongDate;
+    Long sourceSmsId;
 
 
     public MySmsDto(MySms mySms){
-        smsId = mySms.getSourceSmsId();
+        smsId = mySms.getSmsId();
         smsBody = mySms.getSmsBody();
         sourceNumber = mySms.getSourceNumber();
         smsDate = mySms.getSmsDate();

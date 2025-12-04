@@ -10,6 +10,6 @@ public interface MySmsService {
     public List<MySmsDto> getMySmsBySmsDate(String date);
 
     public List<MySmsDto> getLatestMySmsBySmsDate();
-    MySms saveMySms(MySmsDto[] mySmsDto);
-    public void insertSmsDataToDB(MySms sms);
+    public MySms saveMySms(MySmsDto[] mySmsDto);
+    public MySms saveMySms(MySms sms);
 }

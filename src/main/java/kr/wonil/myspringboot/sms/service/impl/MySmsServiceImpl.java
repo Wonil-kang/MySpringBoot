@@ -88,14 +88,20 @@ public class MySmsServiceImpl implements MySmsService {
 
             MySms result = mySmsDAO.insertSms(mySms);
 
-            insertSmsDataToDB(result);
+            processAdditionalSmsDataToDB(result);
 
         }
         return null;
 
     }
 
-    public void insertSmsDataToDB(MySms sms){
+    @Override
+    public MySms saveMySms(MySms sms) {
+
+        return mySmsDAO.insertSms(sms);
+    }
+
+    private void processAdditionalSmsDataToDB(MySms sms){
 
         MyTransactionDto mt = null;
         MyStockHistoryDto msh = null;

@@ -1,6 +1,7 @@
 package kr.wonil.myspringboot.sms.data.entity;
 
 import jakarta.persistence.*;
+import kr.wonil.myspringboot.sms.data.dto.SmsDto;
 import kr.wonil.myspringboot.util.DateUtil;
 import lombok.Data;
 
@@ -16,9 +17,9 @@ public class MySms {
     @Id
     @Column(name = "SMS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int smsId;
+    Long smsId;
     @Column(name = "SRC_SMS_ID")
-    Integer sourceSmsId;
+    Long sourceSmsId;
     @Column(name = "SMS_BODY", columnDefinition = "TEXT")
     String smsBody;
     @Column(name = "SRC_NUMBER")
@@ -36,18 +37,27 @@ public class MySms {
     @Column(name = "MODR_ID")
     String modifierId;
 
-    public int getSourceSmsId(){
-
-        if(sourceSmsId == null) return -1;
-
-        return sourceSmsId;
-    }
-
     public MySms(){
 
     }
 
-    public MySms(int srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
+    public MySms(SmsDto dto){
+
+        this.sourceSmsId = dto.getSrcSmsId();
+        this.smsBody = dto.getMessageText();
+        this.sourceNumber = dto.getPhoneNumber();
+        this.smsDate = dto.getReceivedAt();
+        this.smsLongDate = dto.getReceivedAtLong();
+
+        setRdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+        setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
+        setRegisterId("MODEM");
+        setModifierId("MODEM");
+
+    }
+
+
+    public MySms(Long srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
 
         // yyyyMMddHHmmss 형태 포매터
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
@@ -63,8 +73,8 @@ public class MySms {
 
         setRdtt(DateUtil.getCurrentKoreanDateTimeSecond());
         setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
-        setRegisterId("SYS");
-        setModifierId("SYS");
+        setRegisterId("PHONE");
+        setModifierId("PHONE");
     }
 
 }
