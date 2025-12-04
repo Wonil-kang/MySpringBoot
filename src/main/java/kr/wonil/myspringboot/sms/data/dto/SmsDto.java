@@ -10,12 +10,12 @@ import java.time.format.DateTimeFormatter;
 @Data
 public class SmsDto {
 
-    final long srcSmsId;
+    final Integer srcSmsId;
     final String phoneNumber;
     final String messageText;
     final LocalDateTime receivedAt;
 
-    public SmsDto(int srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
+    public SmsDto(Integer srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
         this.srcSmsId = srcSmsId;
         this.phoneNumber = phoneNumber;
         this.messageText = messageText;

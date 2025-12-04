@@ -83,7 +83,7 @@ public class ModemManager {
     /**
      * 특정 SMS 삭제
      */
-    public void deleteSmsByIndex(OutputStream out, InputStream in, Long index) throws Exception {
+    public void deleteSmsByIndex(OutputStream out, InputStream in, Integer index) throws Exception {
         String resp = sendAt(out, in, "AT+CMGD=" + index);
         System.out.println("SMS 삭제 결과: index " + index + " → " + resp);
     }

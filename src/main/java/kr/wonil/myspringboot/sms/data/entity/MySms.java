@@ -5,6 +5,7 @@ import kr.wonil.myspringboot.sms.data.dto.SmsDto;
 import kr.wonil.myspringboot.util.DateUtil;
 import lombok.Data;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -17,9 +18,9 @@ public class MySms {
     @Id
     @Column(name = "SMS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long smsId;
+    Integer smsId;
     @Column(name = "SRC_SMS_ID")
-    Long sourceSmsId;
+    Integer sourceSmsId;
     @Column(name = "SMS_BODY", columnDefinition = "TEXT")
     String smsBody;
     @Column(name = "SRC_NUMBER")
@@ -57,7 +58,7 @@ public class MySms {
     }
 
 
-    public MySms(Long srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
+    public MySms(Integer srcSmsId, String phoneNumber, String messageText, LocalDateTime receivedAt) {
 
         // yyyyMMddHHmmss 형태 포매터
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");

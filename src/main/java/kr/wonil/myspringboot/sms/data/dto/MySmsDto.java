@@ -5,16 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.ZoneId;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class MySmsDto {
 
-    Long smsId;
+    Integer smsId;
     String smsBody;
     String sourceNumber;
     String smsDate;
-    long smsLongDate;
+    String smsLongDate;
     Long sourceSmsId;
 
 
@@ -23,6 +25,7 @@ public class MySmsDto {
         smsBody = mySms.getSmsBody();
         sourceNumber = mySms.getSourceNumber();
         smsDate = mySms.getSmsDate();
-        smsLongDate = mySms.getSmsLongDate();
+        smsLongDate = mySms.getSmsLongDate() + "";
     }
+
 }

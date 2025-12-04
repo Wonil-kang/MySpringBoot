@@ -16,6 +16,7 @@ import kr.wonil.myspringboot.util.DateUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,7 +85,7 @@ public class MySmsServiceImpl implements MySmsService {
             mySms.setMdtt(DateUtil.getCurrentKoreanDateTimeSecond());
             mySms.setRegisterId("SYS");
             mySms.setModifierId("SYS");
-            mySms.setSmsLongDate(dto.getSmsLongDate());
+            mySms.setSmsLongDate(Long.parseLong(dto.getSmsLongDate()));
 
             MySms result = mySmsDAO.insertSms(mySms);
 

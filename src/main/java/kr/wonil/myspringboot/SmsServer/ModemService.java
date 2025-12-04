@@ -37,7 +37,7 @@ public class ModemService {
         return modemManager.readUnreadMessages(out, in);
     }
 
-    public void deleteByIndex(Long index) throws Exception {
+    public void deleteByIndex(Integer index) throws Exception {
         modemManager.deleteSmsByIndex(out, in, index);
     }
 }
