@@ -35,7 +35,7 @@ public class SmsScheduler {
             List<SmsDto> messages = modemService.readUnread();
 
             if (messages.isEmpty()) {
-                System.out.println("[Scheduler] 새 문자 없음");
+                // System.out.println("[Scheduler] 새 문자 없음");
                 return;
             }
 

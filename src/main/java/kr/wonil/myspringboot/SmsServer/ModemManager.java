@@ -40,7 +40,7 @@ public class ModemManager {
     private String sendAt(OutputStream out, InputStream in, String cmd) throws Exception {
         String fullCmd = cmd + "\r";
 
-        System.out.println(">> " + cmd);
+        // System.out.println(">> " + cmd);
 
         out.write(fullCmd.getBytes(StandardCharsets.US_ASCII));
         out.flush();
@@ -74,7 +74,7 @@ public class ModemManager {
         }
 
         String response = sb.toString();
-        System.out.println("<< " + response.replace("\r\n", "\\r\\n"));
+        // System.out.println("<< " + response.replace("\r\n", "\\r\\n"));
 
         return response;
     }
@@ -94,7 +94,7 @@ public class ModemManager {
      */
     public List<SmsDto> readUnreadMessages(OutputStream out, InputStream in) throws Exception {
 
-        System.out.println("=== 미읽은 문자 조회 ===");
+        // System.out.println("=== 미읽은 문자 조회 ===");
 
         String response = sendAt(out, in, "AT+CMGL=\"REC UNREAD\"");
 
@@ -146,7 +146,7 @@ public class ModemManager {
             }
         }
 
-        System.out.println("총 " + result.size() + "개의 미읽은 문자 발견");
+        // System.out.println("총 " + result.size() + "개의 미읽은 문자 발견");
 
         return result;
     }
