@@ -2,6 +2,7 @@ package kr.wonil.myspringboot.SmsServer;
 
 import com.fazecast.jSerialComm.SerialPort;
 import kr.wonil.myspringboot.sms.data.dto.SmsDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Slf4j
 @Component
 public class ModemManager {
 
@@ -22,7 +24,7 @@ public class ModemManager {
      */
     public void initModem(SerialPort port, OutputStream out, InputStream in) throws Exception {
 
-        System.out.println("=== 모뎀 초기화 시작 ===");
+        log.info("=== 모뎀 초기화 시작 ===");
 
         sendAt(out, in, "AT");            // 기본 통신 체크
         sendAt(out, in, "ATE0");          // echo off
@@ -30,7 +32,7 @@ public class ModemManager {
         sendAt(out, in, "AT+CSCS=\"GSM\""); // 문자셋 설정
         sendAt(out, in, "AT+CPMS?");      // 저장소 상태 확인
 
-        System.out.println("=== 모뎀 초기화 완료 ===");
+        log.info("=== 모뎀 초기화 완료 ===");
     }
 
 
@@ -40,7 +42,7 @@ public class ModemManager {
     private String sendAt(OutputStream out, InputStream in, String cmd) throws Exception {
         String fullCmd = cmd + "\r";
 
-        // System.out.println(">> " + cmd);
+        log.debug(">> {}", cmd);
 
         out.write(fullCmd.getBytes(StandardCharsets.US_ASCII));
         out.flush();
@@ -74,7 +76,7 @@ public class ModemManager {
         }
 
         String response = sb.toString();
-        // System.out.println("<< " + response.replace("\r\n", "\\r\\n"));
+        log.debug("<< {}", response.replace("\r\n", "\\r\\n"));
 
         return response;
     }

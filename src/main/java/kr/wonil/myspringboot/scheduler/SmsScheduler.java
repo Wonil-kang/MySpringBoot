@@ -5,12 +5,13 @@ import kr.wonil.myspringboot.sms.data.dto.MySmsDto;
 import kr.wonil.myspringboot.sms.data.dto.SmsDto;
 import kr.wonil.myspringboot.sms.data.entity.MySms;
 import kr.wonil.myspringboot.sms.service.MySmsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
+@Slf4j
 @Component
 public class SmsScheduler {
 
@@ -39,7 +40,7 @@ public class SmsScheduler {
                 return;
             }
 
-            System.out.println("[Scheduler] 수신 문자 개수: " + messages.size());
+            log.info("[Scheduler] 수신 문자 개수: {}", messages.size());
 
             for (SmsDto sms : messages) {
 
@@ -49,13 +50,13 @@ public class SmsScheduler {
                     // 2) 모뎀에서 삭제할지 여부
                     if (deleteAfterSave) {
                         modemService.deleteByIndex(sms.getSrcSmsId());
-                        System.out.println("[Scheduler] 문자 삭제 완료: index=" + sms.getSrcSmsId());
+                        log.info("[Scheduler] 문자 삭제 완료: index={}", sms.getSrcSmsId());
                     }
                 }
             }
 
         } catch (Exception e) {
-            System.err.println("[Scheduler] 문자 조회 중 오류 발생: " + e.getMessage());
+            log.error("[Scheduler] 문자 조회 중 오류 발생: {}", e.getMessage());
             e.printStackTrace();
         }
     }
