@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Slf4j
-@Component
+//@Component
 public class SmsScheduler {
 
     private final ModemService modemService;
@@ -29,7 +29,7 @@ public class SmsScheduler {
     /**
      * 10초마다 모뎀에서 미읽은 문자 조회 → DB 저장 → 필요 시 모뎀에서 삭제
      */
-    @Scheduled(fixedDelay = 10_000) // = 10초
+    //@Scheduled(fixedDelay = 10_000) // = 10초
     public void pollSms() {
 
         try {

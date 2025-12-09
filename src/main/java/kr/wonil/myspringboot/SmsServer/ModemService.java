@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
-@Service
+//@Service
 public class ModemService {
 
     private final SerialPort port;
@@ -23,7 +23,7 @@ public class ModemService {
         this.modemManager = modemManager;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void init() throws Exception {
         this.out = port.getOutputStream();
         this.in  = port.getInputStream();

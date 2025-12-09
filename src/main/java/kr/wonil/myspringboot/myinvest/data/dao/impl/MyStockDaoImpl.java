@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ public class MyStockDaoImpl implements MyStockDAO {
     private final MyStockHistoryRepository myStockHistoryRepository;
     private final MySPLGStatusRepository mySPLGStatusRepository;
     private final StockInfoRepository   stockInfoRepository;
+    private final TotalStockInfoRepository totalStockInfoRepository;
 
 
     @Override
@@ -121,6 +123,30 @@ public class MyStockDaoImpl implements MyStockDAO {
 
         try {
 
+            TotalStockInfo totalStockInfo = new TotalStockInfo();
+            totalStockInfo.setStockName(stockInfo.getStockName());
+            totalStockInfo.setStockCode(stockInfo.getStockNumber());
+            totalStockInfo.setStockPrice(new BigInteger(stockInfo.getStockPrice() + ""));
+            totalStockInfo.setDate(stockInfo.getStockPriceDate());
+
+            if(
+                totalStockInfoRepository
+                        .countByStockCodeAndDate(
+                                totalStockInfo.getStockCode(),
+                                totalStockInfo.getDate()) <= 0) {
+
+                totalStockInfoRepository.save(totalStockInfo);
+            }
+            else{
+
+                totalStockInfoRepository.updateTotalStockInfo(
+                        totalStockInfo.getStockCode(),
+                        totalStockInfo.getStockPrice(),
+                        totalStockInfo.getStockName(),
+                        totalStockInfo.getDate()
+                );
+            }
+
             result = stockInfoRepository.save(stockInfo);
 
         }catch(Exception e){
@@ -137,6 +163,32 @@ public class MyStockDaoImpl implements MyStockDAO {
         int result = -1;
 
         try {
+
+            TotalStockInfo totalStockInfo = new TotalStockInfo();
+            totalStockInfo.setStockName(stockInfo.getStockName());
+            totalStockInfo.setStockCode(stockInfo.getStockNumber());
+            totalStockInfo.setStockPrice(new BigInteger(stockInfo.getStockPrice() + ""));
+            totalStockInfo.setDate(stockInfo.getStockPriceDate());
+
+
+            if(
+                totalStockInfoRepository
+                    .countByStockCodeAndDate(
+                            totalStockInfo.getStockCode(),
+                            totalStockInfo.getDate()) > 0) {
+
+                totalStockInfoRepository.updateTotalStockInfo(
+                        totalStockInfo.getStockCode(),
+                        totalStockInfo.getStockPrice(),
+                        totalStockInfo.getStockName(),
+                        totalStockInfo.getDate()
+                );
+            }
+            else{
+
+                totalStockInfoRepository.save(totalStockInfo);
+
+            }
 
             result = stockInfoRepository.updateStockInfo (
                     stockInfo.getStockNumber(),
