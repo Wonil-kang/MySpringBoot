@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -128,6 +129,8 @@ public class MyStockDaoImpl implements MyStockDAO {
             totalStockInfo.setStockCode(stockInfo.getStockNumber());
             totalStockInfo.setStockPrice(new BigInteger(stockInfo.getStockPrice() + ""));
             totalStockInfo.setDate(stockInfo.getStockPriceDate());
+            totalStockInfo.setUpdateDate(new Date());
+            totalStockInfo.setSource("NAVER");
 
             if(
                 totalStockInfoRepository
@@ -169,6 +172,8 @@ public class MyStockDaoImpl implements MyStockDAO {
             totalStockInfo.setStockCode(stockInfo.getStockNumber());
             totalStockInfo.setStockPrice(new BigInteger(stockInfo.getStockPrice() + ""));
             totalStockInfo.setDate(stockInfo.getStockPriceDate());
+            totalStockInfo.setUpdateDate(new Date());
+            totalStockInfo.setSource("NAVER");
 
 
             if(

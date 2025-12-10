@@ -28,7 +28,10 @@ public class TotalStockInfo {
     @Column(name = "DATE")
     private String date;
 
-    @Column(name = "UPDATE_DT")
+    @Column(name = "SOURCE")
+    private String source;
+
+    @Column(name = "UPDATE_DT", insertable = false, updatable = true)
     private Date updateDate;
 
 }
