@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!-- 로그 경로 -->
-    <property name="LOG_PATH" value="./logs"/>
+    <!--
+      LOG_PATH 우선순위:
+      1) 환경변수 LOG_PATH (docker run -e LOG_PATH=/app/logs)
+      2) 기본값 /app/logs (컨테이너 마운트 경로와 맞춤)
+    -->
+    <property name="LOG_PATH" value="${LOG_PATH:-/app/logs}"/>
 
     <!-- ======================
-         CONSOLE (개발용)
+         CONSOLE
          ====================== -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -14,7 +18,7 @@
     </appender>
 
     <!-- ======================
-         INFO FILE LOG
+         INFO FILE LOG (INFO 이상)
          ====================== -->
     <appender name="INFO_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -35,21 +39,19 @@
     </appender>
 
     <!-- ======================
-         DEBUG FILE LOG (추가)
+         ERROR FILE LOG (ERROR만 별도 저장)
          ====================== -->
-    <appender name="DEBUG_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
+    <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
         </filter>
 
-        <file>${LOG_PATH}/debug.log</file>
+        <file>${LOG_PATH}/error.log</file>
         <append>true</append>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/debug.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <maxHistory>1</maxHistory>
+            <fileNamePattern>${LOG_PATH}/error.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
 
         <encoder>
@@ -58,12 +60,25 @@
     </appender>
 
     <!-- ======================
+         Hibernate / SQL 로그 억제 (운영용)
+         ====================== -->
+    <!-- Hibernate가 찍는 SQL 본문 -->
+    <logger name="org.hibernate.SQL" level="WARN"/>
+    <!-- Hibernate 6 바인딩 파라미터 -->
+    <logger name="org.hibernate.orm.jdbc.bind" level="WARN"/>
+    <!-- Hibernate 5.x 바인딩/타입 -->
+    <logger name="org.hibernate.type.descriptor.sql" level="WARN"/>
+
+    <!-- Spring JDBC 템플릿 로그도 과다 출력 방지 -->
+    <logger name="org.springframework.jdbc.core" level="WARN"/>
+
+    <!-- ======================
          ROOT LOGGER
          ====================== -->
     <root level="INFO">
         <appender-ref ref="console"/>
         <appender-ref ref="INFO_LOG"/>
-        <appender-ref ref="DEBUG_LOG"/>
+        <appender-ref ref="ERROR_LOG"/>
     </root>
 
 </configuration>
