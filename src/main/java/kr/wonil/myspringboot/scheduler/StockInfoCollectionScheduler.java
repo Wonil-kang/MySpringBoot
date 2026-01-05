@@ -103,7 +103,7 @@ public class StockInfoCollectionScheduler {
     public void runYahooCrawlerBatch() {
         try {
             // .bat 파일 경로를 큰따옴표로 감싸서 공백/한글 경로 문제 방지
-            String batchFilePath = "\"C:\\Users\\wikan\\Dropbox\\000.스크립트\\02.Yahoo_Crawler.bat\"";
+            String batchFilePath = "\"C:\\Users\\wikang\\Dropbox\\000.스크립트\\02.Yahoo_Crawler.bat\"";
 
             ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", batchFilePath);
             processBuilder.inheritIO(); // 콘솔 출력 보기 원할 경우
