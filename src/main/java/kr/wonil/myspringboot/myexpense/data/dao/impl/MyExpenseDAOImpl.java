@@ -276,6 +276,9 @@ public class MyExpenseDAOImpl implements MyExpenseDAO {
 
         try {
 
+            if(myTransaction.getDateTime().length() == 12)
+                myTransaction.setDateTime(myTransaction.getDateTime() + "00");
+
             result = myTransactionRepository.save(myTransaction);
 
         }catch(Exception e){
