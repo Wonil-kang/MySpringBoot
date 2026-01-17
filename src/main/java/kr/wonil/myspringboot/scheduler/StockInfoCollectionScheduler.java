@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -104,6 +105,13 @@ public class StockInfoCollectionScheduler {
         try {
             // .bat 파일 경로를 큰따옴표로 감싸서 공백/한글 경로 문제 방지
             String batchFilePath = "\"C:\\Users\\wikang\\Dropbox\\000.스크립트\\02.Yahoo_Crawler.bat\"";
+            File batchFile = new File(batchFilePath);
+
+            // ✅ 파일 존재 여부 체크
+            if (!batchFile.exists()) {
+                log.debug("[SKIP] Yahoo 크롤러 실행 파일이 존재하지 않습니다: {}", batchFilePath);
+                return; // 조용히 종료
+            }
 
             ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", batchFilePath);
             processBuilder.inheritIO(); // 콘솔 출력 보기 원할 경우
