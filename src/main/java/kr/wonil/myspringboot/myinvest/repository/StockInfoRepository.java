@@ -42,8 +42,8 @@ public interface StockInfoRepository extends JpaRepository<StockInfo, StockInfoP
             @Param("stockPrice") Integer stockPrice,
             @Param("priceDifference") Integer priceDifference,
             @Param("priceDifferenceRatio") Double priceDifferenceRatio,
-            @Param("marketValue") Integer marketValue,
-            @Param("tradingAmount") Integer tradingAmount,
+            @Param("marketValue") Long marketValue,
+            @Param("tradingAmount") Long tradingAmount,
             @Param("threeMonthEarnRate") Double threeMonthEarnRate,
             @Param("nav") Double nav,
             @Param("etfType") String etfType

@@ -48,10 +48,10 @@ public class StockInfo {
     private Double priceDifferenceRatio;
 
     @Column(name = "market_value")
-    private Integer marketValue;
+    private Long marketValue;
 
     @Column(name = "trading_amount")
-    private Integer tradingAmount;
+    private Long tradingAmount;
 
     @Column(name = "three_month_earn_rate")
     private Double threeMonthEarnRate;

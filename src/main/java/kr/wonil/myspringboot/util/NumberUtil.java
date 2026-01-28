@@ -213,6 +213,25 @@ public class NumberUtil {
         return -1;
     }
 
+    public static Long parseLong(String number){
+        Long rst = 0L;
+
+        if(number == null || number.equals("-")) return 0L;
+
+        try {
+
+            rst = Long.parseLong(number);
+            return rst;
+
+        }catch (Exception e){
+
+//            Log.e("parseDouble", e.toString());
+
+        }
+
+        return -1L;
+    }
+
     public static int min(int a, int b){
         if(a > b) return a;
 

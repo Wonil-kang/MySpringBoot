@@ -17,8 +17,8 @@ public class StockDto {
     private String stockPriceDate;
     private Integer difference;
     private Double differenceRatio;
-    private Integer marketValue;
-    private Integer tradingAmount;
+    private Long marketValue;
+    private Long tradingAmount;
 
     private Double threeMonthEarnRate;
     private Double nav;
@@ -36,8 +36,8 @@ public class StockDto {
             difference = NumberUtil.parseInt(jsonObject.get("changeVal") + "");
             differenceRatio = NumberUtil.parseDouble(jsonObject.get("changeRate") + "");
             threeMonthEarnRate = NumberUtil.parseDouble(jsonObject.get("threeMonthEarnRate") + "");
-            tradingAmount = NumberUtil.parseInt(jsonObject.get("quant") + "");
-            marketValue = NumberUtil.parseInt(jsonObject.get("marketSum") + "");
+            tradingAmount = NumberUtil.parseLong(jsonObject.get("quant") + "");
+            marketValue = NumberUtil.parseLong(jsonObject.get("marketSum") + "");
             nav = NumberUtil.parseDouble(jsonObject.get("nav") + "");
             etfFlag = "Y";
 
