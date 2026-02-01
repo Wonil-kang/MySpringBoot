@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot App",
+      "request": "launch",
+      "mainClass": "kr.wonil.myspringboot.MySpringBootApplication",
+      "projectName": "MySpringBoot",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "SPRING_OUTPUT_ANSI_ENABLED": "always"
+      }
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot App (Debug)",
+      "request": "launch",
+      "mainClass": "kr.wonil.myspringboot.MySpringBootApplication",
+      "projectName": "MySpringBoot",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "SPRING_OUTPUT_ANSI_ENABLED": "always"
+      },
+      "vmArgs": "-Dspring.profiles.active=dev"
+    }
+  ]
+}

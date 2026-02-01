@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Logs ###
+logs/
+*.log
+hs_err_pid*.log
+replay_pid*.log
+
 ### STS ###
 .apt_generated
 .classpath
@@ -30,4 +36,37 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+# .vscode/ - Cursor/VSCode settings are now included for team consistency
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+### Application ###
+application-local.properties
+application-dev.properties
+application-prod.properties
+!application.properties
+!application-*.yml
+
+### Sensitive ###
+*.env
+.env.*
+!.env.example
+secrets.properties
+credentials.json
+
+### Temporary ###
+*.tmp
+*.temp
+*.swp
+*.swo
+*~.nib
+*.bak
+*.old

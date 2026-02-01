@@ -1,0 +1,75 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Maven: Clean",
+      "type": "shell",
+      "command": "./mvnw.cmd clean",
+      "windows": {
+        "command": ".\\mvnw.cmd clean"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Maven: Package",
+      "type": "shell",
+      "command": "./mvnw.cmd clean package -DskipTests",
+      "windows": {
+        "command": ".\\mvnw.cmd clean package -DskipTests"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Maven: Install",
+      "type": "shell",
+      "command": "./mvnw.cmd clean install -DskipTests",
+      "windows": {
+        "command": ".\\mvnw.cmd clean install -DskipTests"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Spring Boot: Run",
+      "type": "shell",
+      "command": "./mvnw.cmd spring-boot:run",
+      "windows": {
+        "command": ".\\mvnw.cmd spring-boot:run"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Maven: Test",
+      "type": "shell",
+      "command": "./mvnw.cmd test",
+      "windows": {
+        "command": ".\\mvnw.cmd test"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
